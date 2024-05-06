@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice } from '@reduxjs/toolkit';
 
-import courses_data from '@/data/courses-data';
+import course_data from '@/data/course-data';
 
 const initialState = {
-  courses: courses_data,
+  courses: course_data,
   course: {},
 };
 

@@ -54,7 +54,7 @@ const CourseType = ({ data, classes }: { data: any; classes?: any }) => {
             <Link
               className='edu-btn btn-small btn-secondary'
               style={{ cursor: 'pointer' }}
-              href={`/course-details/${data.slug}`}
+              href={`/courses/course-details/${data.slug}`}
             >
               Learn More
               <i className='icon-4'></i>
