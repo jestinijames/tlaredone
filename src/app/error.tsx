@@ -14,7 +14,6 @@ import BreadcrumbTwo from '@/components/ui/breadcrumb-two';
 
 export default function Error({
   error,
-  reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;

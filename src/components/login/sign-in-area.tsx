@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import React from 'react';
 
 import LoginForm from './login-form';
 
 const SignInArea = () => {
-  const { data, status } = useSession();
-  console.log(data, status);
+  //const { data, status } = useSession();
+  //console.log(data, status);
 
   return (
     <section className='account-page-area section-gap-equal'>

@@ -1,2276 +1,252 @@
 const course_data = [
   {
     id: 1,
-    img: 'course-01.jpg',
-    duration: '4 Weeks',
-    course_outline: 'Online + Onsite',
-    level: 'Advanced',
-    title: 'Starting SEO as your Home Based Business',
-    rating: '4.9',
-    rating_count: 8,
-    course_price: '49.00',
-    lesson: 13,
-    student: 28,
-    category: 'Art & Design',
+    img: 'church-history-survey-small.jpg',
+    cover_img: 'church-history-survey-large.jpg',
+    title: 'Church History Survey',
+    slug: 'church-history-survey',
+    category: 'Church History',
+    tags: ['Historical Christianity', 'Church History Survey'],
     short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Jane Seymour',
-    instructor_img: 'team-01.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
+      'This course is designed to introduce Christians to the principal people; the major political, historical, and cultural developments; the main religious movements; and the doctrinal issues which have influenced and shaped the Christian church throughout its 2000 year history.',
+    instructors: [
+      {
+        name: 'Revanth T',
+      },
+      {
+        name: 'Royce Thomas',
+      },
     ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
+    goals: [
+      'To teach Christians the primary facts, significant events, and main movements which have impacted the Christian church in history.',
+      'To acquaint Christians with the key figures of church history whose lives have influenced the church.',
+      'To instruct Christians in the biblical principles by which the church should have operated over the centuries.',
+      'To lead Christians to an awareness of both the triumphs and failures of the church in history.',
+      'To encourage Christians to learn from the lessons of church history what the church should and should not do.',
+      'To re-emphasize to Christians the need for the church to maintain pure doctrine and practice.',
+      'To enable Christians to gain a proper historical perspective on the church today in order to understand its present condition and challenge.',
     ],
     language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
   },
   {
     id: 2,
-    img: 'course-02.jpg',
-    duration: '3 Weeks',
-    course_outline: 'Online Only',
-    level: 'Beginner',
-    title: 'Java Programming Masterclass for Software Developers',
-    rating: '4.4',
-    rating_count: 10,
-    course_price: '78.99',
-    lesson: 15,
-    student: 35,
-    category: 'Development',
+    img: 'spiritual-formation-small.jpg',
+    cover_img: 'spiritual-formation-large.jpg',
+    title: 'Spiritual Formation',
+    slug: 'spiritual-formation',
+    category: 'Spiritual Formation',
+    tags: ['Spiritual Growth', 'Personal Development', 'Doctrine'],
     short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Susan White',
-    instructor_img: 'team-05.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
+      'This course is designed to teach Christians the concepts and principles of spiritual life so they can personally grow to spiritual maturity and live a life that is pleasing to God.',
+    instructors: [
       {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
+        name: 'George Mattackal',
       },
       {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
+        name: 'Iype Cherian',
       },
     ],
-    language: 'Korean',
+    goals: [
+      'To instruct Christians in the basic principles and truths related to spiritual life.',
+      'To lead Christians to understand their position in Jesus Christ and the essential resources God has provided through the Word and the Holy Spirit.',
+      'To train Christians to successfully participate in the process of growth to spiritual maturity by practical application and obedience.',
+      'To suggest to Christians what the believer should know and do in regard to the basic areas of the spiritual life.',
+    ],
+    language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
   },
   {
     id: 3,
-    img: 'course-03.jpg',
-    duration: '10 Weeks',
-    course_outline: 'Onsite Only',
-    level: 'Advanced',
-    title: 'Building A Better World One Student At A Time',
-    rating: '5.0',
-    rating_count: 15,
-    course_price: '64.99',
-    lesson: 18,
-    student: 33,
-    category: 'Business',
+    img: 'systematic-theology-small.jpg',
+    cover_img: 'systematic-theology-large.jpg',
+    title: 'Systematic Theology',
+    slug: 'systematic-theology',
+    category: 'Systematic Theology',
+    tags: ['Doctrine', 'Theological Framework'],
     short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Penelope Cruz',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
+      'A survey and summary of the ten major doctrines of the Bible with an emphasis on the student knowing God more fully while understanding and practicing sound theology.',
+    instructors: [
+      {
+        name: 'Revanth T',
+      },
+      {
+        name: 'Royce Thomas',
+      },
+
+      {
+        name: 'George Mattackal',
+      },
+
+      {
+        name: 'Jerry George Mathew',
+      },
     ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
+    goals: [
+      'To teach Christians the foundational truths of Bible doctrine.',
+      'To lead Christians into a deeper understanding of and appreciation for God.',
+      'To enrich the Christians`s personal relationship to God.',
+      'To train church leaders to teach correct doctrine and refute false doctrine.',
+      'To enable Christians to see that correct belief must be reflected in correct behavior.',
     ],
     language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
   },
   {
     id: 4,
-    img: 'course-04.jpg',
-    duration: '6 Weeks',
-    course_outline: 'Online Only',
-    level: 'Intermediate',
-    title: 'Master Your Personal Brand Like a Marketing Pro',
-    rating: '4.5',
-    rating_count: 18,
-    course_price: '55.99',
-    lesson: 20,
-    student: 38,
-    category: 'Academics',
+    img: 'new-testament-survey-small.jpg',
+    cover_img: 'new-testament-survey-large.jpg',
+    title: 'New Testament Survey',
+    slug: 'new-testament-survey',
+    category: 'The New Testament',
+    tags: ['Doctrine', 'Theological Framework', 'Whole Bible Context'],
     short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'John Travolta',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
+      'An overview survey of the New Testament focusing on the theme, purpose, structure and basic content of each individual book and relating each book to the whole Bible. Strong emphasis is also given to the applicational message of each book.',
+    instructors: [
       {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
+        name: 'Revanth T',
       },
       {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
+        name: 'Royce Thomas',
+      },
+
+      {
+        name: 'George Mattackal',
+      },
+
+      {
+        name: 'Iype Cherian',
       },
     ],
-    language: 'German',
+    goals: [
+      'To provide Christians with the knowledge necessary to understand the essential meaning and significance of the New Testament as it relates to salvation and sanctification.',
+      'To train Christians in the use of the survey method of study, including book charts.',
+      'To instruct Christians in the content of each New Testament book and how that content applies today.',
+      'To increase appreciation for the scope, unity, purpose, and reliability of Scripture.',
+      'To prepare church leaders for effective ministry by equipping them with the Word of God.',
+      'To enhance understanding of the person and work of Jesus Christ.',
+      'To reinforce dependence on the Word of God as the fundamental ministry resource.',
+      'To encourage church leaders to preach and teach the principles, truths, and concepts of the New Testament.',
+    ],
+    language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
   },
   {
     id: 5,
-    img: 'course-05.jpg',
-    duration: '6 Weeks',
-    course_outline: 'Online + Onsite',
-    level: 'Advanced',
-    title: 'The Complete 2023 Web Development Bootcamp',
-    rating: '4.8',
-    rating_count: 27,
-    course_price: '49.99',
-    lesson: 35,
-    student: 48,
-    category: 'Art & Design',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Edward Norton',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
+    img: 'old-testament-survey-small.jpg',
+    cover_img: 'old-testament-survey-large.jpg',
+    title: 'Old Testament Survey',
+    slug: 'old-testament-survey',
+    category: 'The Old Testament',
+    tags: [
+      'Faith and Obedience',
+      'Theological Framework',
+      'Whole Bible Context',
     ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
+    short_desc:
+      'A broad overview and survey of the Old Testament designed to emphasize the structure, theme and message of the Old Testament and each of its 39 individual books in order to provide understanding of God’s self-revelation and His plan of redemption.',
+    instructors: [
       {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
+        name: 'Jerry George Mathew',
       },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
+    ],
+    goals: [
+      'To teach Christians the basic structure, theme, and message of the Old Testament and its 39 books as the foundation for the New Testament.',
+      'To teach Christians the broad sweep of Old Testament theological history as it relates to Israel and God’s plan of redemption.',
+      'To lead Christians to a clear understanding of the relationship between the Old Testament and the New Testament.',
+      'To lead Christians to a better understanding of and appreciation for — who God is, who man is, the purpose for which man was created, the nature and consequences of sin, the gracious love and mercy of God expressed in redemption, the integrity, unity, and value of the Word of God.',
+      'To encourage Christians to learn from the examples and illustrations of the Old Testament.',
+      'To encourage Christians to walk by faith before God.',
+      'To encourage Christians to fully obey the Word of God.',
+      'To exhort Christians to preach and teach the principles, truths, and concepts of the Old Testament.',
     ],
     language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
   },
   {
     id: 6,
-    img: 'course-06.jpg',
-    duration: '9 Weeks',
-    course_outline: 'Online + Onsite',
-    level: 'Intermediate',
-    title: 'Python for Beginners - Learn Programming from scratch',
-    rating: '4.9',
-    rating_count: 30,
-    course_price: '64.99',
-    lesson: 12,
-    student: 85,
-    category: 'Marketing',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Penelope Cruz',
-    instructor_img: 'team-05.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
+    img: 'expository-preaching-small.jpg',
+    cover_img: 'expository-preaching-large.jpg',
+    title: 'Expository Preaching',
+    slug: 'expository-preaching',
+    category: 'Preaching',
+    tags: [
+      'Doctrine',
+      'Church Leadership Training',
+      'Biblical Message Preparation',
     ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
+    short_desc:
+      'This course is designed to equip and train church leaders with the knowledge and skills necessary to prepare and communicate expository messages from God’s Word. The goal of these messages is that they be biblically accurate and responsive to the needs of people. Emphasis is placed on practical preparation of the preacher and his message with numerous examples and practice assignments.',
+    instructors: [
       {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
+        name: 'Revanth T',
       },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
+    ],
+    goals: [
+      'To demonstrate from Scripture the necessity for the expository preaching of the Word of God, and to train church leaders to communicate God’s Word.',
+      'To teach church leaders what the Bible says about their qualifications, role, and responsibilities from God’s perspective as servants of Christ and His church.',
+      'To underscore the importance of the preacher’s spiritual preparation.',
+      'To train church leaders in the basic skills of preparing accurate biblical messages.',
+      'To emphasize the need to allow the text of Scripture to determine both the content and structure of the message.',
     ],
     language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
+  },
+  {
+    id: 7,
+    img: 'how-to-study-the-bible-small.jpg',
+    cover_img: 'how-to-study-the-bible-large.jpg',
+    title: 'How to study the Bible',
+    slug: 'how-to-study-the-bible',
+    category: 'Bible Study',
+    tags: ['Christian Theology', 'Hermeneutics', 'Doctrine'],
+    short_desc:
+      'An introduction to Bible study methods and rules of interpretation with emphasis on accurately understanding and obeying God’s Word, and the development of practical skills. Students will learn to determine what Scripture says, what it means, and how it can be applied.',
+    instructors: [
       {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
+        name: 'Revanth T',
       },
       {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
+        name: 'Jerry George Mathew',
       },
     ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
+    goals: [
+      'To train Christians to properly and systematically study and interpret the Bible in order to `correctly handle the Word of Truth` so that they may be `equipped for every good work.`',
+      'To lead Christians to an awareness of their need to personally apply and obey the Bible as they preach and teach others.',
+      'To demonstrate that an important purpose of studying the Bible is for personal “training in righteousness” so Christians will become more like Jesus Christ.',
+      'To emphasize the necessity to absolutely and totally depend on the illumination and teaching ministry of the indwelling Holy Spirit.',
+      'To encourage Christians to engage in personal, serious, regular Bible study in the text of Scripture.',
     ],
+    language: 'English',
+    certificate: 'yes',
   },
 
   {
-    id: 10,
-    duration: '12 Weeks',
-    course_outline: 'Onsite Only',
-    img: 'course-10.jpg',
-    hours: 35,
-    level: 'Beginner',
-    title: 'Master Microservices with Spring Boot and Spring Cloud',
-    rating: '5',
-    rating_count: 8,
-    course_price: '35',
-    lesson: 13,
-    student: 35,
-    category: 'Art & Design',
+    id: 8,
+    img: 'pastoral-ministry-small.jpg',
+    cover_img: 'pastoral-ministry-large.jpg',
+    title: 'Pastoral Ministry',
+    slug: 'pastoral-ministry',
+    category: 'Christian Ministry',
+    tags: ['Church Leadership', 'Ministry Responsibilities', 'Preaching Goals'],
     short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Edward Norton',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
+      'This course is designed to equip elders and pastors with knowledge and practical skills required for effective ministry in the church which is fruitful from God’s perspective.',
+    instructors: [
+      {
+        name: 'George Mattackal',
+      },
+      {
+        name: 'Iype Cherian',
+      },
     ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
+    goals: [
+      'To teach church leaders what the Bible says about their qualifications, role, and responsibilities from God’s perspective as servants of Christ and His church.',
+      'To provide instruction on how to productively and practically carry out pastoral ministry in the church.',
+      'To warn church leaders about those things which lead to “burn-out” and failure in the ministry.',
+      'To show that the goal of preaching is life change—becoming more like Jesus Christ.',
     ],
     language: 'English',
     certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 11,
-    duration: '9 Weeks',
-    course_outline: 'Online Only',
-    img: 'course-11.jpg',
-    hours: 45,
-    level: 'Intermediate',
-    title: 'The Complete Angular Course: Beginner to Advanced',
-    rating: '4.8',
-    rating_count: 16,
-    course_price: '40',
-    lesson: 18,
-    student: 42,
-    category: 'Art & Design',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Connie Comerford',
-    instructor_img: 'team-06.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'German',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 12,
-    duration: '8 Weeks',
-    course_outline: 'Online + Onsite',
-    img: 'course-12.jpg',
-    hours: 20,
-    level: 'Advanced',
-    title: 'Vue - The Complete Guide (w/ Router, Vuex, Composition API)',
-    rating: '5',
-    rating_count: 20,
-    course_price: '50',
-    lesson: 8,
-    student: 50,
-    category: 'Marketing',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Edward Norton',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'Hindi',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 13,
-    duration: '14 Weeks',
-    course_outline: 'Onsite Only',
-    img: 'course-13.jpg',
-    hours: 25,
-    level: 'Power Yoga',
-    title: 'Build Responsive Real- World Websites with HTML and CSS',
-    rating: '4.5',
-    rating_count: 20,
-    course_price: '30',
-    lesson: 18,
-    student: 25,
-    category: 'Academics',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Jane Seymour',
-    instructor_img: 'team-01.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  // kitchen course
-  {
-    id: 14,
-    kitchen_course: true,
-    course_outline: 'Online Only',
-    duration: '16 Weeks',
-    img: 'course-14.jpg',
-    hours: 30,
-    level: 'Cooking',
-    title: 'Healthy Sushi Roll - Japanese Popular Cooking Class',
-    rating: '5',
-    rating_count: 35,
-    course_price: '40',
-    lesson: 22,
-    student: 28,
-    category: 'Marketing',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Susan White',
-    instructor_img: 'team-05.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 15,
-    kitchen_course: true,
-    duration: '15 Weeks',
-    course_outline: 'Online + Onsite',
-    img: 'course-15.jpg',
-    hours: 32,
-    level: 'Cooking',
-    title: 'Nutrition Kitchen - Basics of Cooking for Busy People',
-    rating: '4',
-    rating_count: 38,
-    course_price: '50',
-    lesson: 15,
-    student: 31,
-    category: 'Business',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Penelope Cruz',
-    instructor_img: 'team-03.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Prepare a huge variety of simple, delicious, healthy recipes.',
-      'Professional Indian cooking from beginners to experts.',
-      'Serve delicious and healthy meals for your loved ones.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 16,
-    kitchen_course: true,
-    duration: '13 Weeks',
-    course_outline: 'Onsite Only',
-    img: 'course-16.jpg',
-    hours: 35,
-    level: 'Cooking',
-    title: 'Authentic Kerala Cooking - The South Indian Cuisine',
-    rating: '5',
-    rating_count: 40,
-    course_price: '60',
-    lesson: 20,
-    student: 36,
-    category: 'Academics',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Edward Norton',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Cook much loved recipes like ravioli, pizza and pesto from scratch',
-      'Cook better than restaurant Thai food at home',
-      'Keep your food safe from harmful bacteria and disease.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 17,
-    kitchen_course: true,
-    duration: '20 Weeks',
-    course_outline: 'Online + Onsite',
-    img: 'course-17.jpg',
-    hours: 40,
-    level: 'Cooking',
-    // level: 'Drawing',
-    title: 'Vegan Thai Cooking Classes Popular Vegan Recipes',
-    rating: '5',
-    rating_count: 35,
-    course_price: '30',
-    lesson: 22,
-    student: 40,
-    category: 'Development',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.',
-    instructor: 'Edward Norton',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Professional Indian cooking from beginners to experts.',
-      'Prepare a huge variety of simple, delicious, healthy recipes.',
-      'Serve delicious and healthy meals for your loved ones.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 18,
-    kitchen_course: true,
-    duration: '15 Weeks',
-    course_outline: 'Online + Onsite',
-    img: 'course-18.jpg',
-    hours: 32,
-    level: 'Cooking',
-    title: 'Indian Culinary World - Master the art of Indian Cooking',
-    rating: '4',
-    rating_count: 38,
-    course_price: '50',
-    lesson: 15,
-    student: 31,
-    category: 'Business',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Susan White',
-    instructor_img: 'team-05.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Prepare a huge variety of simple, delicious, healthy recipes.',
-      'Professional Indian cooking from beginners to experts.',
-      'Serve delicious and healthy meals for your loved ones.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 19,
-    kitchen_course: true,
-    duration: '13 Weeks',
-    course_outline: 'Onsite Only',
-    img: 'course-19.jpg',
-    hours: 35,
-    level: 'Cooking',
-    title: 'Herbalism - Medicinal Kitchen Herbs & Spices Certificate',
-    rating: '5',
-    rating_count: 40,
-    course_price: '60',
-    lesson: 20,
-    student: 36,
-    category: 'Academics',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Jane Seymour',
-    instructor_img: 'team-01.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Cook much loved recipes like ravioli, pizza and pesto from scratch',
-      'Cook better than restaurant Thai food at home',
-      'Keep your food safe from harmful bacteria and disease.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Professional Japanese cooking from beginners to experts',
-      'Will be able to cook authentic Italian recipes in their own kitchen',
-      'Understand the HOW of cooking, before thinking of the WHAT to cook.',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 20,
-    yoga_course: true,
-    img: 'course-20.jpg',
-    duration: '9 Weeks',
-    course_outline: 'Onsite Only',
-    level: 'Power Yoga',
-    title: 'Yoga for Back Pain Relief',
-    rating: '4.9',
-    rating_count: 30,
-    course_price: '30',
-    lesson: 12,
-    student: 85,
-    category: 'Marketing',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod tempor.',
-    instructor: 'Edward Norton',
-    instructor_img: 'team-02.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 21,
-    yoga_course: true,
-    img: 'course-21.jpg',
-    duration: '5 Weeks',
-    course_outline: 'Online + Onsite',
-    level: 'Power Yoga',
-    title: 'Super Brain YOGA',
-    rating: '5.0',
-    rating_count: 11,
-    course_price: '40',
-    lesson: 20,
-    student: 38,
-    category: 'Art & Design',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.',
-    instructor: 'John Travolta',
-    instructor_img: 'team-04.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'Hindi',
-    certificate: 'yes',
-    videoId: 'c238xxeDdFI',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
-  },
-  {
-    id: 22,
-    yoga_course: true,
-    img: 'course-22.jpg',
-    duration: '10 Weeks',
-    course_outline: 'Online + Onsite',
-    level: 'Power Yoga',
-    title: 'Chair Yoga for Seniors',
-    rating: '4.9',
-    rating_count: 15,
-    course_price: '50',
-    lesson: 20,
-    student: 35,
-    category: 'Development',
-    short_desc:
-      'Lorem ipsum dolor sit amet consectur elit sed eiusmod ex tempor incididunt labore dolore magna.',
-    instructor: 'John Travolta',
-    instructor_img: 'team-04.webp',
-    instructor_title: 'Founder & CEO',
-    instructor_desc:
-      'Consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua enim minim veniam quis nostrud exercitation ulla mco laboris nisi ut aliquip ex ea commodo consequat. duis aute irure dolor in reprehenderit in voluptate.',
-    features: [
-      'Build fully-fledged websites and web apps for your business.',
-      'After the course you will be able to build ANY website you want.',
-      'You will master both front and back-end development technologies.',
-    ],
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-      {
-        link: 'https://www.youtube.com/',
-        target: '_blank',
-        icon: 'icon-youtube',
-      },
-    ],
-    language: 'English',
-    certificate: 'yes',
-    videoId: 'PICj5tr9hcc',
-    course_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur enim ipsam.',
-    course_desc_2:
-      'Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.',
-    learn_list: [
-      'Learn to use Python professionally, learning both Python 2 & Python 3!',
-      'Build 6 beautiful real-world projects for your portfolio (not boring toy apps)',
-      'Understand the Theory behind Vue.js and use it in Real Projects',
-      'Create responsive, accessible, and beautiful layouts',
-    ],
-    course_desc_3:
-      'Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat duis aute irure dolor.',
-    curriculum_desc:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc idid unt ut labore et dolore magna aliqua enim ad minim veniam, quis nostrud exerec tation ullamco laboris nis aliquip commodo consequat.',
-    course_lessons: [
-      {
-        title: 'Week 1-4',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Introduction', icon: 'icon-68' },
-          { title: 'Course Overview', icon: 'icon-68' },
-          {
-            title: 'Course Overview',
-            badge_list: true,
-            question: 0,
-            minutes: 10,
-          },
-          { title: 'Course Exercise / Reference Files', icon: 'icon-68' },
-          {
-            title: 'Code Editor Installation (Optional if you have one)',
-            icon: 'icon-68',
-          },
-          { title: ' Embedding PHP in HTML', icon: 'icon-68' },
-        ],
-      },
-      {
-        title: 'Week 5-8',
-        text: 'Advanced story telling techniques for writers: Personas, Characters & Plots',
-        lessons: [
-          { title: 'Defining Functions', icon: 'icon-68' },
-          { title: 'Function Parameters', icon: 'icon-68' },
-          {
-            title: ' Return Values From Functions',
-            badge_list: true,
-            question: 2,
-            minutes: 15,
-          },
-          { title: ' Global Variable and Scope', icon: 'icon-68' },
-          { title: 'Newer Way of creating a Constant', icon: 'icon-68' },
-          { title: 'Constants', icon: 'icon-68' },
-        ],
-      },
-    ],
-    reviews: [
-      {
-        img: '/assets/images/blog/comment-01.jpg',
-        rating: 5,
-        name: 'Haley Bennet',
-        date: 'Oct 10, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-02.jpg',
-        rating: 5,
-        name: 'Simon Baker',
-        date: 'Oct 15, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-      {
-        img: '/assets/images/blog/comment-03.jpg',
-        rating: 5,
-        name: 'Richard Gere',
-        date: 'Oct 19, 2021',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      },
-    ],
   },
 ];
 

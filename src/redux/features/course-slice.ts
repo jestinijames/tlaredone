@@ -12,12 +12,10 @@ const initialState = {
 export const courseSlice = createSlice({
   name: 'course',
   initialState,
-  reducers: {
-    single_product: (state, { payload }) => {},
-  },
+  reducers: {},
 });
 
-export const { single_product } = courseSlice.actions;
+//export const {} = courseSlice.actions;
 export const selectCourses = (state: { courses: { courses: any } }) =>
   state.courses.courses;
 export default courseSlice.reducer;

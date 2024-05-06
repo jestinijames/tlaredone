@@ -1,326 +1,117 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import React from 'react';
 
-import CourseDetailsSidebar from './course-details-sidebar';
+import faculty_data from '@/data/faculty';
+
+import CourseInstructors from '@/components/course-details/course-instructors';
 
 const CourseDetail = ({ course }: { course: any }) => {
-  const {
-    course_desc,
-    course_desc_2,
-    learn_list,
-    course_desc_3,
-    curriculum_desc,
-    course_lessons,
-    instructor_img,
-    instructor_title,
-    instructor_desc,
-    social_links,
-    reviews,
-    instructor,
-    rating,
-    rating_count,
-  } = course || {};
+  const { cover_img, language, certificate, instructors, short_desc, goals } =
+    course || {};
   return (
-    <section className='edu-section-gap course-details-area'>
+    <section className='event-details-area edu-section-gap'>
       <div className='container'>
-        <div className='row row--30'>
-          <div className='col-lg-8'>
-            <div className='course-details-content course-details-2'>
-              <div className='course-overview'>
-                <h3
-                  className='heading-title'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  About This Course
-                </h3>
-                <p
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  {course_desc}
-                </p>
-                <p
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  {course_desc_2}
-                </p>
-                <div className='border-box'>
-                  <h5
-                    className='title'
-                    data-sal-delay='150'
-                    data-sal='slide-up'
-                    data-sal-duration='800'
-                  >
-                    What You’ll Learn?
-                  </h5>
-                  <div className='row g-5'>
-                    <div
-                      className='col-lg-6'
-                      data-sal-delay='150'
-                      data-sal='slide-up'
-                      data-sal-duration='800'
-                    >
-                      <ul>
-                        <li>
-                          Learn to use Python professionally, learning both
-                          Python 2 & Python 3!
-                        </li>
-                        <li>
-                          Build 6 beautiful real-world projects for your
-                          portfolio (not boring toy apps)
-                        </li>
-                      </ul>
-                    </div>
+        <div className='event-details'>
+          <div className='main-thumbnail'>
+            <Image
+              height={420}
+              width={1170}
+              src={`/images/course/${cover_img}`}
+              alt='Event'
+            />
+          </div>
+          <div className='row row--30'>
+            <div className='col-lg-8'>
+              <div className='course-details-content course-details-2'>
+                <div className='course-overview'>
+                  <h3>About The Course</h3>
+                  <p>{short_desc}</p>
 
-                    <div
-                      className='col-lg-6'
+                  <div className='border-box'>
+                    <h5
+                      className='title'
                       data-sal-delay='150'
                       data-sal='slide-up'
                       data-sal-duration='800'
                     >
-                      <ul>
-                        <li>
-                          Understand the Theory behind Vue.js and use it in Real
-                          Projects
-                        </li>
-                        <li>
-                          Create responsive, accessible, and beautiful layouts
-                        </li>
-                      </ul>
+                      Goals
+                    </h5>
+                    <div className='row g-5'>
+                      <div
+                        data-sal-delay='150'
+                        data-sal='slide-up'
+                        data-sal-duration='800'
+                      >
+                        <ul>
+                          {goals.map((goal: string, index: number) => (
+                            <li key={index}>{goal}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                <h3
-                  className='heading-title'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  Requirements
-                </h3>
-                <ul
-                  className='mb--90'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  <li>
-                    No prior knowledge of Wordpress is required as everything
-                    will be covered in this course.
-                  </li>
-                  <li>
-                    Basic HTML and CSS knowledge helps, but isn't a must-have
-                  </li>
-                  <li>
-                    You don't need any coding experience at all. That is the
-                    beauty of Wordpress.
-                  </li>
-                  <li>Basic JavaScript knowledge is required</li>
-                </ul>
-
-                <h3
-                  className='heading-title'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  Target Audience
-                </h3>
-                <ul
-                  className='mb--90'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  <li>
-                    Newcomer as well as experienced frontend developers
-                    interested in learning a modern JavaScript framework
-                  </li>
-                  <li>
-                    If you want to learn to master Wordpress without getting
-                    bogged down with technical jargon, this course is for you.
-                  </li>
-                  <li>
-                    This course is for you if you want to build a website,
-                    whether for personal or business reasons.
-                  </li>
-                  <li>
-                    This course is perfect for you if you are taking over an
-                    existing Wordpress website, or want to build one from
-                  </li>
-                </ul>
               </div>
+            </div>
 
-              {/* <div className='course-curriculam mb--90'>
-                <h3
-                  className='heading-title'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  Topics for This Course
-                </h3>
-                <p
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor inc idid unt ut labore et dolore magna
-                  aliqua.
-                </p>
-                <div
-                  className='accordion edu-accordion'
-                  id='accordionExample'
-                  data-sal-delay='150'
-                  data-sal='slide-up'
-                  data-sal-duration='800'
-                >
-                  <SingleAccordion
-                    show={true}
-                    id='1'
-                    title='Course Introduction'
-                    desc={[
-                      { title: 'Introduction', icon: 'icon-68' },
-                      { title: 'Course Overview', icon: 'icon-68' },
-                      {
-                        title: 'Course Overview',
-                        badge_list: true,
-                        question: 0,
-                        minutes: 10,
-                      },
-                      {
-                        title: 'Course Exercise / Reference Files',
-                        icon: 'icon-68',
-                      },
-                      {
-                        title:
-                          'Code Editor Installation (Optional if you have one)',
-                        icon: 'icon-68',
-                      },
-                      { title: 'Embedding PHP in HTML', icon: 'icon-68' },
-                    ]}
-                  />
-                  <SingleAccordion
-                    id='2'
-                    title='JavaScript Language Basics'
-                    desc={[
-                      { title: 'Introduction', icon: 'icon-68' },
-                      { title: 'Course Overview', icon: 'icon-68' },
-                      {
-                        title: 'Course Overview',
-                        badge_list: true,
-                        question: 2,
-                        minutes: 12,
-                      },
-                      {
-                        title: 'Course Exercise / Reference Files',
-                        icon: 'icon-68',
-                      },
-                      {
-                        title:
-                          'Code Editor Installation (Optional if you have one)',
-                        icon: 'icon-68',
-                      },
-                      { title: 'Embedding PHP in HTML', icon: 'icon-68' },
-                    ]}
-                  />
-                  <SingleAccordion
-                    id='3'
-                    title='Components & Databinding'
-                    desc={[
-                      { title: 'Introduction', icon: 'icon-68' },
-                      { title: 'Course Overview', icon: 'icon-68' },
-                      {
-                        title: 'Course Overview',
-                        badge_list: true,
-                        question: 4,
-                        minutes: 15,
-                      },
-                      {
-                        title: 'Course Exercise / Reference Files',
-                        icon: 'icon-68',
-                      },
-                      {
-                        title:
-                          'Code Editor Installation (Optional if you have one)',
-                        icon: 'icon-68',
-                      },
-                      { title: 'Embedding PHP in HTML', icon: 'icon-68' },
-                    ]}
-                  />
-                  <SingleAccordion
-                    id='4'
-                    title='Product Management Leadership'
-                    desc={[
-                      { title: 'Introduction', icon: 'icon-68' },
-                      { title: 'Course Overview', icon: 'icon-68' },
-                      {
-                        title: 'Course Overview',
-                        badge_list: true,
-                        question: 6,
-                        minutes: 18,
-                      },
-                      {
-                        title: 'Course Exercise / Reference Files',
-                        icon: 'icon-68',
-                      },
-                      {
-                        title:
-                          'Code Editor Installation (Optional if you have one)',
-                        icon: 'icon-68',
-                      },
-                      { title: 'Embedding PHP in HTML', icon: 'icon-68' },
-                    ]}
-                  />
-                </div>
-              </div> */}
+            <div className='col-lg-4'>
+              <div className='course-sidebar-3'>
+                <div className='edu-course-widget widget-course-summery'>
+                  <div className='inner'>
+                    <div className='content'>
+                      <h4 className='widget-title'>Additional Info:</h4>
+                      <ul className='course-item'>
+                        {instructors.map((instructor: any) => (
+                          <li key={instructor.id}>
+                            <span className='label'>
+                              <i className='icon-62'></i>Instructor:
+                            </span>
+                            <span className='value'>{instructor.name}</span>
+                          </li>
+                        ))}
 
-              <div
-                className='course-instructor-wrap mb--90'
-                data-sal-delay='150'
-                data-sal='slide-up'
-                data-sal-duration='800'
-              >
-                <h3 className='heading-title'>Your Instructors</h3>
-                <div className='course-instructor'>
-                  <div className='thumbnail'>
-                    <img
-                      src={`/images/team/team-02/${instructor_img}`}
-                      alt='team images'
-                    />
-                  </div>
-
-                  <div className='author-content'>
-                    <h6 className='title'>{instructor}</h6>
-                    <span className='subtitle'>{instructor_title}</span>
-                    <p>{instructor_desc}</p>
-                    <ul className='social-share'>
-                      {social_links?.map((social: any, i: number) => (
-                        <li key={i}>
-                          <a
-                            href={social.link}
-                            target={social.target ? social.target : ''}
-                          >
-                            <i className={social.icon}></i>
-                          </a>
+                        <li>
+                          <span className='label'>
+                            <i className='icon-59'></i>Language:
+                          </span>
+                          <span className='value'>{language}</span>
                         </li>
-                      ))}
-                    </ul>
+
+                        <li>
+                          <span className='label'>
+                            <i className='icon-64'></i>Certificate:
+                          </span>
+                          <span className='value'>{certificate}</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className='col-lg-4'>
-            <CourseDetailsSidebar course={course} details_2={true} />
+        </div>
+
+        <div className='event-speaker'>
+          <h3 className='heading-title'>Instructors</h3>
+          <div className='row g-5'>
+            {instructors.map((instructor: any) => {
+              const instructorData = findFacultyByName(instructor.name);
+
+              return (
+                <div
+                  key={instructor.id}
+                  className='col-lg-3 col-sm-6 col-12'
+                  data-sal-delay={instructor.delay}
+                  data-sal='slide-up'
+                  data-sal-duration='800'
+                >
+                  <CourseInstructors instructor={instructorData} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -329,3 +120,12 @@ const CourseDetail = ({ course }: { course: any }) => {
 };
 
 export default CourseDetail;
+
+function findFacultyByName(name: string) {
+  const facultyDetail = faculty_data.find((faculty) => faculty.name === name);
+  if (facultyDetail) {
+    return facultyDetail;
+  } else {
+    notFound();
+  }
+}

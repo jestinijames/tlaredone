@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import courses_data from '@/data/courses-data';
+import course_data from '@/data/course-data';
 
 import CourseSidebar from '@/components/courses/course-sidebar';
 import CourseSortingArea from '@/components/courses/course-sorting-area';
@@ -11,13 +11,13 @@ import CourseSortingArea from '@/components/courses/course-sorting-area';
 import CourseItems from './course-items';
 
 // course_items
-const course_items = courses_data.filter(
+const course_items = course_data.filter(
   (arr, index, self) => index === self.findIndex((i) => i.img === arr.img)
 );
 
 const CourseArea = () => {
   const [showing, setShowing] = useState(0);
-  const { categories, instructors, levels, languages, price } = useSelector(
+  const { categories, instructors, tags, languages } = useSelector(
     (state: any) => state.filter
   );
 
@@ -29,20 +29,27 @@ const CourseArea = () => {
     )
     .filter((item1) =>
       instructors?.length !== 0
-        ? instructors?.some((item2: any) => item1.instructor == item2)
+        ? instructors?.some((item2: any) =>
+            item1.instructors.some(
+              (instructor: any) => instructor.name === item2
+            )
+          )
         : item1
     )
+
     .filter((item1) =>
-      levels?.length !== 0
-        ? levels?.some((item2: any) => item1.level == item2)
+      tags?.length !== 0
+        ? tags?.some((item2: any) =>
+            item1.tags.some((tag: any) => tag === item2)
+          )
         : item1
     )
+
     .filter((item1) =>
       languages?.length !== 0
         ? languages?.some((item2: any) => item1.language == item2)
         : item1
-    )
-    .filter((item) => Number(item.course_price) <= price);
+    );
 
   return (
     <div className='edu-course-area course-area-1 section-gap-equal'>

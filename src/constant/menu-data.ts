@@ -56,7 +56,6 @@ const menu_data = [
         hot: true,
         new: false,
       },
-      { title: 'Create Course', link: '/create-course', hot: true, new: false },
     ],
   },
 ];

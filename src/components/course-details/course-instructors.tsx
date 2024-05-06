@@ -3,48 +3,50 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const FacultyItem = ({ faculty }: { faculty: any }) => {
+const CourseInstructors = ({ instructor }: { instructor: any }) => {
   return (
     <div className='edu-team-grid team-style-1'>
       <div className='inner'>
         <div className='thumbnail-wrap'>
           <div className='thumbnail'>
-            <Link href={`/faculty/member/${faculty.slug}`}>
+            <Link href={`/faculty/member/${instructor.slug}`}>
               <Image
                 height={320}
                 width={270}
-                src={`/images/faculty/${faculty.img}`}
-                alt='faculty image'
+                src={`/images/faculty/${instructor.img}`}
+                alt='team images'
               />
             </Link>
           </div>
           <ul className='team-share-info'>
             <li>
-              <a href='#'>
+              <Link href='#'>
                 <i className='icon-share-alt'></i>
-              </a>
+              </Link>
             </li>
-            {faculty.social_links.map((social: any, i: number) => (
+            {instructor.social_links.map((social: any, i: number) => (
               <li key={i}>
-                <a
+                <Link
                   href={social.link}
                   target={social.target ? social.target : ''}
                 >
                   <i className={social.icon}></i>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
         <div className='content'>
           <h5 className='title'>
-            <Link href={`/team-details/${faculty.id}`}>{faculty.name}</Link>
+            <Link href={`/team-details/${instructor.id}`}>
+              {instructor.name}
+            </Link>
           </h5>
-          <span className='designation'>{faculty.title}</span>
+          <span className='designation'>{instructor.title}</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default FacultyItem;
+export default CourseInstructors;

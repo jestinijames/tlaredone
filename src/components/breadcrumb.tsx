@@ -6,7 +6,7 @@ const Breadcrumb = ({
   current_page,
   parent_page,
 }: {
-  title: string;
+  title?: string;
   current_page: string;
   parent_page?: { title: string; url: string };
 }) => {

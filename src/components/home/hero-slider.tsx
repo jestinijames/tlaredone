@@ -73,7 +73,7 @@ const HeroSlider = () => {
         // }}
       >
         {slider_data.map((item) => {
-          const { btn_text, id, sm_text, src, subtitle, title } = item;
+          const { id, sm_text, src, subtitle, title } = item;
           return (
             <SwiperSlide key={id}>
               <img

@@ -85,7 +85,7 @@ const BlogArea = () => {
             data-sal-duration='800'
           >
             {sm_blogs.map((blog) => {
-              const { id, img, date, category, title, author, comment } = blog;
+              const { id, img, category, title, author } = blog;
               return (
                 <div key={id} className='edu-blog blog-style-2'>
                   <div className='inner'>

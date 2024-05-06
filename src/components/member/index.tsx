@@ -24,7 +24,7 @@ const index = ({ slug }: { slug: string }) => {
         <Header />
         <Breadcrumb
           title='Faculty Details'
-          current_page='Faculty'
+          current_page={facultyMember.name}
           parent_page={parent_page}
         />
         <MemberArea member={facultyMember} />

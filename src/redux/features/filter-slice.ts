@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface FilterState {
   categories: string[];
   instructors: string[];
+  tags: any[];
   levels: string[];
   languages: string[];
-  price: number;
   page_count: number;
   item_offset: number;
   forcePage: number | null;
@@ -14,12 +15,14 @@ interface FilterState {
 interface AddCategoryPayload {
   changeType: 'remove' | 'added';
   item: string;
-  maxPrice: number;
 }
 
 interface AddInstructorPayload {
   instructor: string;
-  maxPrice: number;
+}
+
+interface AddTagPayload {
+  tag: string;
 }
 
 interface AddLevelPayload {
@@ -28,7 +31,6 @@ interface AddLevelPayload {
 
 interface AddLanguagePayload {
   language: string;
-  maxPrice: number;
 }
 
 export const filterSlice = createSlice({
@@ -36,9 +38,9 @@ export const filterSlice = createSlice({
   initialState: {
     categories: [],
     instructors: [],
+    tags: [],
     levels: [],
     languages: [],
-    price: 0,
     page_count: 0,
     item_offset: 0,
     forcePage: null,
@@ -66,6 +68,14 @@ export const filterSlice = createSlice({
         );
       }
     },
+    add_tag: (state, { payload }: PayloadAction<AddTagPayload>) => {
+      const isExist = state.tags.includes(payload.tag);
+      if (!isExist) {
+        state.tags.push(payload.tag);
+      } else {
+        state.tags = state.tags.filter((tag) => tag !== payload.tag);
+      }
+    },
     add_level: (state, { payload }: PayloadAction<AddLevelPayload>) => {
       const isExist = state.levels.includes(payload.level);
       if (!isExist) {
@@ -84,9 +94,7 @@ export const filterSlice = createSlice({
         );
       }
     },
-    add_price: (state, { payload }: PayloadAction<number>) => {
-      state.price = payload;
-    },
+
     add_count_page: (state, { payload }: PayloadAction<number>) => {
       state.page_count = payload;
     },
@@ -96,12 +104,12 @@ export const filterSlice = createSlice({
     add_force_page: (state, { payload }: PayloadAction<number | null>) => {
       state.forcePage = payload;
     },
-    reset_filter: (state, { payload }: PayloadAction<number>) => {
+    reset_filter: (state) => {
       state.categories = [];
       state.instructors = [];
+      state.tags = [];
       state.languages = [];
       state.levels = [];
-      state.price = payload;
     },
   },
 });
@@ -109,9 +117,9 @@ export const filterSlice = createSlice({
 export const {
   add_category,
   add_instructor,
+  add_tag,
   add_level,
   add_language,
-  add_price,
   reset_filter,
   add_count_page,
   add_item_offset,

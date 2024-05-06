@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React from 'react';
 
 const MemberArea = ({ member }: { member: any }) => {
@@ -10,8 +11,10 @@ const MemberArea = ({ member }: { member: any }) => {
           <div className='col-lg-4'>
             <div className='team-details-thumb'>
               <div className='thumbnail'>
-                <img
-                  src={`/images/team/team-01/${member.img}`}
+                <Image
+                  height={370}
+                  width={370}
+                  src={`/images/faculty/detail/${member.detail}`}
                   alt='team images'
                 />
               </div>

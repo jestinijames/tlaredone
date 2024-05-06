@@ -7,7 +7,7 @@ const CourseType = ({ data, classes }: { data: any; classes?: any }) => {
     <div className={`edu-course course-style-3 ${classes ? classes : ''}`}>
       <div className='inner'>
         <div className='thumbnail'>
-          <Link href={`/course-details/${data.slug}`}>
+          <Link href={`/courses/course-details/${data.slug}`}>
             <img
               src={`/images/course/course-04/${data.img}`}
               alt='Course Meta'

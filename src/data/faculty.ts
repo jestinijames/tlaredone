@@ -3,6 +3,7 @@ const faculty_data = [
     id: 1,
     slug: 'revanth-t',
     img: 'revanth.webp',
+    detail: 'revanth.jpg',
     social_links: [
       {
         link: 'https://www.facebook.com/TandLA',
@@ -60,6 +61,7 @@ const faculty_data = [
     id: 2,
     slug: 'george-mattackal',
     img: 'george.webp',
+    detail: 'george.jpg',
     social_links: [
       {
         link: 'https://www.facebook.com/george.mattackal?fref=ts',
@@ -100,6 +102,7 @@ const faculty_data = [
     id: 3,
     slug: 'jerry-george',
     img: 'jerry.webp',
+    detail: 'jerry.jpg',
     social_links: [
       {
         link: 'https://www.facebook.com/jerrymgeorge',
@@ -140,6 +143,7 @@ const faculty_data = [
   {
     id: 4,
     img: 'royce.webp',
+    detail: 'royce.jpg',
     slug: 'royce-thomas',
     social_links: [
       {
@@ -172,6 +176,7 @@ const faculty_data = [
     id: 5,
     slug: 'iype-cherian',
     img: 'iype.webp',
+    detail: 'iype.jpg',
     social_links: [
       {
         link: 'https://www.facebook.com/iypec',
@@ -201,108 +206,6 @@ const faculty_data = [
         title: 'New Testament Survey',
       },
     ],
-  },
-  // {
-  //   id: 6,
-  //   img: 'team-06.webp',
-  //   social_links: [
-  //     { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-  //     { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-  //     {
-  //       link: 'https://www.linkedin.com/',
-  //       target: '_blank',
-  //       icon: 'icon-linkedin2',
-  //     },
-  //   ],
-  //   name: 'Connie Comerford',
-  //   title: 'Web Developer',
-  //   sm_text: 'Consectetur adipisicing elit, sed do eius mod tempor incididunt',
-  // },
-  // {
-  //   id: 7,
-  //   img: 'team-07.webp',
-  //   social_links: [
-  //     { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-  //     { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-  //     {
-  //       link: 'https://www.linkedin.com/',
-  //       target: '_blank',
-  //       icon: 'icon-linkedin2',
-  //     },
-  //   ],
-  //   name: 'Hilary Swank',
-  //   title: 'Digital Marketer',
-  //   sm_text: 'Consectetur adipisicing elit, sed do eius mod tempor incididunt',
-  // },
-  // {
-  //   id: 8,
-  //   img: 'team-08.webp',
-  //   social_links: [
-  //     { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-  //     { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-  //     {
-  //       link: 'https://www.linkedin.com/',
-  //       target: '_blank',
-  //       icon: 'icon-linkedin2',
-  //     },
-  //   ],
-  //   name: 'Michael Douglas',
-  //   title: 'Designer',
-  //   sm_text: 'Consectetur adipisicing elit, sed do eius mod tempor incididunt',
-  // },
-];
-
-export const yoga_instructor = [
-  {
-    id: 1,
-    img: 'team-01.webp',
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-    ],
-    name: 'Nancy Dew',
-    title: 'Yoga Trainer',
-    delay: '50',
-    sm_text: 'Consectetur adipisicing elit, sed do eius mod tempor incididunt',
-  },
-  {
-    id: 2,
-    img: 'team-02.webp',
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-    ],
-    name: 'Jared Hayes',
-    title: 'Yoga Trainer',
-    delay: '100',
-    sm_text: 'Consectetur adipisicing elit, sed do eius mod tempor incididunt',
-  },
-  {
-    id: 3,
-    img: 'team-03.webp',
-    social_links: [
-      { link: 'http://facebook.com', target: '_blank', icon: 'icon-facebook' },
-      { link: 'http://twitter.com', target: '_blank', icon: 'icon-twitter' },
-      {
-        link: 'https://www.linkedin.com/',
-        target: '_blank',
-        icon: 'icon-linkedin2',
-      },
-    ],
-    name: 'Rebecca Roye',
-    title: 'Yoga Trainer',
-    delay: '150',
-    sm_text: 'Consectetur adipisicing elit, sed do eius mod tempor incididunt',
   },
 ];
 

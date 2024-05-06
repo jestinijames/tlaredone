@@ -3,7 +3,6 @@ import React from 'react';
 
 const CourseSortingArea = ({
   num,
-  course_list,
   items,
 }: {
   num: any;

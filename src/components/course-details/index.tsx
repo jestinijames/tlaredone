@@ -1,7 +1,8 @@
 'use client';
+import { notFound } from 'next/navigation';
 import React from 'react';
 
-import { home_page_courses } from '@/data/home_data';
+import course_data from '@/data/course-data';
 
 import Breadcrumb from '@/components/breadcrumb';
 import Footer from '@/components/layout/footer';
@@ -15,7 +16,6 @@ const parent_page = {
 };
 
 const index = ({ slug }: { slug: string }) => {
-  console.log(slug);
   const course = findCourseBySlug(slug);
 
   return (
@@ -23,7 +23,7 @@ const index = ({ slug }: { slug: string }) => {
       <div id='main-wrapper' className='main-wrapper'>
         <Header />
         <Breadcrumb
-          title='Course Details'
+          title={course?.title}
           current_page='Course Details'
           parent_page={parent_page}
         />
@@ -37,10 +37,10 @@ const index = ({ slug }: { slug: string }) => {
 export default index;
 
 function findCourseBySlug(slug: string) {
-  const courseDetail = home_page_courses.find((course) => course.slug === slug);
+  const courseDetail = course_data.find((course) => course.slug === slug);
   if (courseDetail) {
     return courseDetail;
   } else {
-    // notFound();
+    notFound();
   }
 }
