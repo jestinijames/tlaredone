@@ -19,7 +19,7 @@ const AllPodcasts = () => {
   const fetchVideos = useCallback(async () => {
     setIsLoading(true);
     try {
-      const podcastId = process.env.NEXT_PUBLIC_YOUTUBE_PLAYLIST_ID;
+      const podcastId = process.env.YOUTUBE_PLAYLIST_ID;
       const resultsPerPage = process.env.NEXT_PUBLIC_YOUTUBE_RESULTS_PER_PAGE
         ? process.env.NEXT_PUBLIC_YOUTUBE_RESULTS_PER_PAGE
         : '';

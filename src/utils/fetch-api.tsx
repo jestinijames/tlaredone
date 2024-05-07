@@ -5,7 +5,7 @@ export async function fetchData(
   order = ''
 ) {
   try {
-    const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_TOKEN;
+    const API_KEY = process.env.YOUTUBE_API_TOKEN;
 
     const requestUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxResults}&key=${API_KEY}
     ${pageToken ? `&pageToken=${pageToken}` : ''}
