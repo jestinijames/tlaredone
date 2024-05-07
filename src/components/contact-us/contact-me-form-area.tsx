@@ -11,7 +11,7 @@ const ContactMeFormArea = () => {
           <div className='col-lg-8'>
             <div className='contact-form'>
               <div className='section-title section-center'>
-                <h3 className='title'>Just Drop Me a Line</h3>
+                <h3 className='title'>Just drop us a message</h3>
               </div>
               <ContactMeForm />
             </div>

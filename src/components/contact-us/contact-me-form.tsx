@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // import emailjs from 'emailjs-com';
-import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from 'react';
 
 const Result = () => {
   return (
@@ -21,23 +23,41 @@ const Result = () => {
 const ContactMeForm = () => {
   const [result, setResult] = useState(false);
 
+  const form = useRef<HTMLFormElement>(null); // Specify the type of ref
+
   const sendEmail = (e: any) => {
     e.preventDefault();
-    // emailjs
-    //   .sendForm(
-    //     'service_bxh6md3',
-    //     'template_1g7v07n',
-    //     e.target,
-    //     'user_8Lx0gfI1ktOoeEN8DTV10'
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      ? process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      : '';
+
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      ? process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      : '';
+
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      ? process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      : '';
+
+    if (!form.current) {
+      console.error('Form reference is null');
+      return;
+    }
+
+    emailjs
+      .sendForm(serviceId, templateId, form.current, {
+        publicKey: publicKey,
+      })
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+
     e.target.reset();
     setResult(true);
   };
@@ -47,21 +67,30 @@ const ContactMeForm = () => {
   }, 5000);
 
   return (
-    <form className='rnt-contact-form rwt-dynamic-form' onSubmit={sendEmail}>
+    <form
+      ref={form}
+      className='rnt-contact-form rwt-dynamic-form'
+      onSubmit={sendEmail}
+    >
       <div className='row row--10'>
         <div className='form-group col-lg-6'>
           <input
             type='text'
-            name='fullname'
+            name='user_name'
             placeholder='Your Name*'
             required
           />
         </div>
         <div className='form-group col-lg-6'>
-          <input type='email' name='email' placeholder='Your Email*' required />
+          <input
+            type='email'
+            name='user_email'
+            placeholder='Your Email*'
+            required
+          />
         </div>
         <div className='form-group col-12'>
-          <input type='tel' name='phone' placeholder='Phone number' />
+          <input type='tel' name='user_phone' placeholder='Phone number' />
         </div>
         <div className='form-group col-12'>
           <textarea

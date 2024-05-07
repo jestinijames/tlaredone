@@ -3,6 +3,8 @@ import React from 'react';
 
 import { SocialShare } from '@/components/social-share';
 
+import { siteConfig } from '@/constant/config';
+
 const ContactMeArea = () => {
   return (
     <section className='section-gap-equal contact-me-area'>
@@ -33,29 +35,29 @@ const ContactMeArea = () => {
 
                 <div className='contact-us-info'>
                   <h3 className='heading-title'>
-                    I will Answer all Your Questions
+                    We will try to Answer all Your Questions
                   </h3>
                   <ul className='address-list'>
-                    <li>
+                    {/* <li>
                       <h5 className='title'>Address</h5>
                       <p>
                         Studio 76d, Riley Ford, North Michael chester, CF99 6QQ
                       </p>
-                    </li>
+                    </li> */}
                     <li>
                       <h5 className='title'>Email</h5>
                       <p>
-                        <a href='mailto:edublink@example.com'>
-                          edublink@example.com
+                        <a href={`mailto:${siteConfig.email}`}>
+                          {siteConfig.email}
                         </a>
                       </p>
                     </li>
-                    <li>
+                    {/* <li>
                       <h5 className='title'>Phone</h5>
                       <p>
                         <a href='tel:+0914135548598'>(+091) 413 554 8598</a>
                       </p>
-                    </li>
+                    </li> */}
                   </ul>
                   <ul className='social-share'>
                     <li>

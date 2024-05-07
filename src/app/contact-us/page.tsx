@@ -1,4 +1,4 @@
-import ContactUsList from '@/components/contact-us';
+import ContactUsSection from '@/components/contact-us';
 import Wrapper from '@/components/layout/wrapper';
 import SEO from '@/components/seo';
 
@@ -7,7 +7,7 @@ export default function ContactUs() {
     <>
       <Wrapper>
         <SEO pageTitle='Contact Us' />
-        <ContactUsList />
+        <ContactUsSection />
       </Wrapper>
     </>
   );

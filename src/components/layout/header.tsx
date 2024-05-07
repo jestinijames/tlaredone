@@ -118,22 +118,22 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
                       src={
                         style_3
                           ? '/images/logo/logo-dark.png'
-                          : '/images/logo/logo-dark-2.png'
+                          : '/images/logo/logo-dark-3.png'
                       }
-                      alt='Corporate Logo'
-                      height={50}
-                      width={158}
+                      alt='TLA Logo'
+                      height={72}
+                      width={236}
                     />
                     <Image
                       className='logo-dark'
                       src={
                         style_3
                           ? '/images/logo/logo-white.png'
-                          : '/images/logo/logo-light-2.png'
+                          : '/images/logo/logo-light-3.png'
                       }
-                      alt='Corporate Logo'
-                      height={50}
-                      width={158}
+                      alt='TLA Logo'
+                      height={72}
+                      width={236}
                     />
                   </Link>
                 </div>

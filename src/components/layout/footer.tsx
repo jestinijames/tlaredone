@@ -84,17 +84,17 @@ const Footer = ({ style_2, dark_bg, home_4 }: FooterProps) => {
                           <Image
                             className='logo-light'
                             src={logoLight}
-                            alt='Corporate Logo'
-                            height={50}
-                            width={158}
+                            alt='TLA Logo'
+                            height={72}
+                            width={236}
                           />
                         )}
                         <Image
                           className='logo-dark'
                           src={logoDark}
-                          alt='Corporate Logo'
-                          height={50}
-                          width={158}
+                          alt='TLA Logo'
+                          height={72}
+                          width={236}
                         />
                       </>
                     )}
@@ -107,11 +107,11 @@ const Footer = ({ style_2, dark_bg, home_4 }: FooterProps) => {
                         src={
                           home_4
                             ? '/images/logo/logo-white.png'
-                            : '/images/logo/logo-light-2.png'
+                            : '/images/logo/logo-light-3.png'
                         }
-                        alt='Corporate Logo'
-                        height={50}
-                        width={158}
+                        alt='TLA Logo'
+                        height={72}
+                        width={236}
                       />
                     )}
                   </Link>
