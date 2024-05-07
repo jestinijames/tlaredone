@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
-
-import menu_data from '@/constant/menu-data';
+import React from 'react';
 
 interface OffCanvasPopupProps {
   isOpen: boolean;
@@ -10,15 +8,15 @@ interface OffCanvasPopupProps {
 }
 
 const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
-  const [navTitle, setNavTitle] = useState('');
+  // const [navTitle, setNavTitle] = useState('');
 
-  const openMobileMenu = (menu: React.SetStateAction<string>) => {
-    if (navTitle === menu) {
-      setNavTitle('');
-    } else {
-      setNavTitle(menu);
-    }
-  };
+  // const openMobileMenu = (menu: React.SetStateAction<string>) => {
+  //   if (navTitle === menu) {
+  //     setNavTitle('');
+  //   } else {
+  //     setNavTitle(menu);
+  //   }
+  // };
   return (
     <>
       <div className={`popup-mobile-menu ${isOpen ? 'active' : ''}`}>
@@ -29,17 +27,17 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
                 <span>
                   <Image
                     className='logo-light'
-                    src='/images/logo/logo-dark.png'
+                    src='/images/logo/logo-dark-3.png'
                     alt='logo'
-                    height={50}
-                    width={158}
+                    height={72}
+                    width={236}
                   />
                   <Image
                     className='logo-dark'
-                    src='/images/logo/logo-white.png'
+                    src='/images/logo/logo-light-3.png'
                     alt='logo'
-                    height={50}
-                    width={158}
+                    height={72}
+                    width={236}
                   />
                 </span>
               </Link>
@@ -54,6 +52,45 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
 
           <div className='mm-menu'>
             <ul>
+              <li>
+                <Link href='/who-we-are'>Who We Are</Link>
+              </li>
+              <li>
+                <Link href='/what-we-teach'>What We Teach</Link>
+              </li>
+              <li>
+                <Link href='/faculty'>Faculty</Link>
+              </li>
+              <li>
+                <Link href='/courses'>Courses</Link>
+              </li>
+              <li>
+                <Link href='/courses'>Articles</Link>
+              </li>
+              <li>
+                <Link href='/podcasts'>Podcasts</Link>
+              </li>
+              <li>
+                <Link href='/login'>Login</Link>
+              </li>
+              <li>
+                <Link href='/create-article'>Create Article</Link>
+              </li>
+              <li>
+                <Link
+                  className='edu-btn btn-secondary'
+                  style={{
+                    textAlign: 'center',
+                    padding: '0',
+                  }}
+                  href='/contact-us'
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+            {/* DONT DELETE */}
+            {/* <ul>
               {menu_data.map((menu, i) => (
                 <li
                   key={i}
@@ -106,7 +143,7 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
                   {!menu.submenus && <Link href={menu.link}>{menu.title}</Link>}
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>

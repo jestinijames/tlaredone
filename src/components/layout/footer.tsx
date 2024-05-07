@@ -6,8 +6,8 @@ import FooterSocial from '@/components/layout/footer-social';
 import { siteConfig } from '@/constant/config';
 
 const footer_contents = {
-  logoLight: '/images/logo/logo-dark.png',
-  logoDark: '/images/logo/logo-white.png',
+  logoLight: '/images/logo/logo-dark-3.png',
+  logoDark: '/images/logo/logo-light-3.png',
   desc: 'The mission of Truth and Life Academy is to glorify the Lord Jesus Christ by training Christians for the proclamation of His Word and the building up of His church.',
   add: '70-80 Upper St Norwich NR2',
   call: '+01 123 5641 231',
@@ -104,11 +104,7 @@ const Footer = ({ style_2, dark_bg, home_4 }: FooterProps) => {
                     {dark_bg && (
                       <Image
                         className='logo-light'
-                        src={
-                          home_4
-                            ? '/images/logo/logo-white.png'
-                            : '/images/logo/logo-light-3.png'
-                        }
+                        src='/images/logo/logo-light-3.png'
                         alt='TLA Logo'
                         height={72}
                         width={236}

@@ -15,17 +15,17 @@ const SearchPopup = ({ isSearchOpen, setIsSearchOpen }: SearchPopupProps) => {
         <div className='site-logo'>
           <Image
             className='logo-light'
-            src='/images/logo/logo-dark.png'
-            alt='logo'
-            height={50}
-            width={158}
+            src='/images/logo/logo-dark-3.png'
+            alt='TLA Logo'
+            height={72}
+            width={236}
           />
           <Image
             className='logo-dark'
-            src='/images/logo/logo-white.png'
-            alt='logo'
-            height={50}
-            width={158}
+            src='/images/logo/logo-light-3.png'
+            alt='TLA Logo'
+            height={72}
+            width={236}
           />
         </div>
         <div className='close-button' onClick={() => setIsSearchOpen(false)}>

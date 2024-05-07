@@ -115,22 +115,14 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
                   <Link href='/'>
                     <Image
                       className='logo-light'
-                      src={
-                        style_3
-                          ? '/images/logo/logo-dark.png'
-                          : '/images/logo/logo-dark-3.png'
-                      }
+                      src='/images/logo/logo-dark-3.png'
                       alt='TLA Logo'
                       height={72}
                       width={236}
                     />
                     <Image
                       className='logo-dark'
-                      src={
-                        style_3
-                          ? '/images/logo/logo-white.png'
-                          : '/images/logo/logo-light-3.png'
-                      }
+                      src='/images/logo/logo-light-3.png'
                       alt='TLA Logo'
                       height={72}
                       width={236}
