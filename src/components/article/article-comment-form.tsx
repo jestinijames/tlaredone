@@ -1,65 +1,59 @@
-import { useFormik } from 'formik';
 import React from 'react';
-import { toast } from 'react-toastify';
-
-import ErrorMsg from '@/components/forms/error-msg';
-
-import { blogCommentSchema } from '../../utils/validation-schema';
 
 const ArticleCommentForm = () => {
-  const { handleChange, handleSubmit, handleBlur, errors, values, touched } =
-    useFormik({
-      initialValues: { name: '', email: '', msg: '' },
-      validationSchema: blogCommentSchema,
-      onSubmit: (values, { resetForm }) => {
-        toast.success(`${values.name} your comment added successfully`, {
-          position: 'top-left',
-        });
-        resetForm();
-      },
-    });
+  //   const { handleChange, handleSubmit, handleBlur, errors, values, touched } =
+  //     useFormik({
+  //       initialValues: { name: '', email: '', msg: '' },
+  //       validationSchema: blogCommentSchema,
+  //       onSubmit: (values, { resetForm }) => {
+  //         toast.success(`${values.name} your comment added successfully`, {
+  //           position: 'top-left',
+  //         });
+  //         resetForm();
+  //       },
+  //     });
 
   return (
-    <form className='comment-form' onSubmit={handleSubmit}>
+    <form className='comment-form'>
       <div className='row g-5'>
         <div className='form-group col-lg-6'>
           <input
-            value={values.name}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            // value={values.name}
+            // onChange={handleChange}
+            // onBlur={handleBlur}
             type='text'
             name='name'
             id='contact-name'
             placeholder='Your Name'
           />
-          {touched.name && <ErrorMsg error={errors.name} />}
+          {/* {touched.name && <ErrorMsg error={errors.name} />} */}
         </div>
 
         <div className='form-group col-lg-6'>
           <input
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            // value={values.email}
+            // onChange={handleChange}
+            // onBlur={handleBlur}
             type='email'
             name='email'
             id='contact-email'
             placeholder='Your Email'
           />
-          {touched.email && <ErrorMsg error={errors.email} />}
+          {/* {touched.email && <ErrorMsg error={errors.email} />} */}
         </div>
 
         <div className='form-group col-12'>
           <textarea
-            value={values.msg}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            // value={values.msg}
+            // onChange={handleChange}
+            // onBlur={handleBlur}
             name='msg'
             id='comm-message'
             cols={30}
             rows={5}
             placeholder='Leave A Comment'
           ></textarea>
-          {touched.msg && <ErrorMsg error={errors.msg} />}
+          {/* {touched.msg && <ErrorMsg error={errors.msg} />} */}
         </div>
 
         <div className='form-group'>

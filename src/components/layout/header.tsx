@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signOut, useSession } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import React, { useState } from 'react';
 import { TbPhonePlus } from 'react-icons/tb';
 
@@ -63,7 +64,15 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
                   <ul className='header-info'>
                     {status === 'unauthenticated' && (
                       <li>
-                        <Link href='/login'>Login</Link>
+                        <Link
+                          onClick={(e: any) => {
+                            e.preventDefault();
+                            signIn('google');
+                          }}
+                          href='#'
+                        >
+                          Login
+                        </Link>
                       </li>
                     )}
                     {status === 'authenticated' && (

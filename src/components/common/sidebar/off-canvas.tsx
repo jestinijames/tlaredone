@@ -1,7 +1,10 @@
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import React from 'react';
-
 interface OffCanvasPopupProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,6 +20,9 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
   //     setNavTitle(menu);
   //   }
   // };
+
+  const { data: sessionData, status } = useSession();
+  const router = useRouter();
   return (
     <>
       <div className={`popup-mobile-menu ${isOpen ? 'active' : ''}`}>
@@ -71,11 +77,35 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
                 <Link href='/podcasts'>Podcasts</Link>
               </li>
               <li>
-                <Link href='/login'>Login</Link>
+                <Link
+                  href='#'
+                  onClick={(e: any) => {
+                    e.preventDefault();
+                    signIn('google');
+                  }}
+                >
+                  Login
+                </Link>
               </li>
-              <li>
-                <Link href='/create-article'>Create Article</Link>
-              </li>
+              {status === 'authenticated' && (
+                <>
+                  <li>
+                    <Link href='/create-article'>Create Article</Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={async (e) => {
+                        e.preventDefault();
+                        await signOut({ redirect: false });
+                        router.push('/');
+                      }}
+                      href='#'
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                </>
+              )}
               <li>
                 <Link
                   className='edu-btn btn-secondary'

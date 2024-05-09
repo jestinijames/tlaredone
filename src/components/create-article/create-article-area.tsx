@@ -1,4 +1,44 @@
-import React from 'react';
+'use client';
+
+// import dynamic from "next/dynamic";
+// import { FaTimes } from "react-icons/fa";
+// import { z } from "zod";
+// import React, { useContext, useEffect, useState } from "react";
+// import { Controller, useForm } from "react-hook-form";
+// const ReactQuill = dynamic(() => import("react-quill"), {
+//   ssr: false,
+// });
+// import "react-quill/dist/quill.snow.css";
+// import { toast } from 'react-toastify';
+// import { createTRPCRouter } from "@/server/api/trpc";
+// import MultiSelectAutoComplete, {type Option} from "@/components/ui/multi-select-combobox";
+
+// interface IFormInputs {
+//   title: string;
+//   description: string;
+//   text: string;
+// }
+
+// export const postSchema = z.object({
+//   title: z.string().min(20).max(40),
+//   description: z.string().min(95).max(200),
+//   text: z.string().min(80),
+// });
+
+export const ErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
+  return (
+    <div
+      style={{
+        width: '100%',
+        wordBreak: 'break-word',
+        fontSize: '0.875rem',
+        color: '#DC2626',
+      }}
+    >
+      <p>{errorMessage}</p>
+    </div>
+  );
+};
 
 const countries = [
   'Select Option',
@@ -11,10 +51,22 @@ const countries = [
 ];
 
 const CreateArticleArea = () => {
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  //   reset,
+  //   control,
+  //   getValues,
+  // } = useForm<IFormInputs>({
+  //   resolver: zodResolver(postSchema),
+  // });
+
+  // const [selectedTags, setSelectedTags] = useState<Option[]>([]);
   return (
     <section className='checkout-page-area section-gap-equal'>
       <div className='container'>
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           <div className='row row--25'>
             <div>
               <div className='checkout-billing'>
@@ -56,11 +108,14 @@ const CreateArticleArea = () => {
                   <div className='col-lg-6'>
                     <div className='form-group'>
                       <label>Country*</label>
-                      <select id='country'>
-                        {countries.map((country, i) => (
-                          <option key={i}>{country}</option>
-                        ))}
-                      </select>
+                      {/* <MultiSelectAutoComplete
+                options={tags.map((tag) => ({
+                  label: tag.name,
+                  id: tag.id,
+                }))}
+                selectedOptions={selectedTags}
+                setSelectedOptions={setSelectedTags}
+              /> */}
                     </div>
                   </div>
                 </div>

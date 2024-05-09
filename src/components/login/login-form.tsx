@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useFormik } from 'formik';
+
 import React from 'react';
 import { useState } from 'react';
-
-import ErrorMsg from '@/components/forms/error-msg';
-
-import { loginSchema } from '@/utils/validation-schema';
 
 // import useFirebase from '../../hooks/use-firebase';
 // import { loginSchema } from '../../utils/validation-schema';
@@ -15,48 +11,28 @@ const LoginForm = () => {
   // use firebase
   //   const { loginWithEmailPassword, resetPassword } = useFirebase();
   //   // use formik
-  const { handleChange, handleSubmit, handleBlur, errors, values, touched } =
-    useFormik({
-      initialValues: { email: '', password: '' },
-      validationSchema: loginSchema,
-      onSubmit: (
-        values: any,
-        {
-          resetForm,
-        }: {
-          resetForm: any;
-        }
-      ) => {
-        //loginWithEmailPassword(values.email, values.password);
-        resetForm();
-      },
-    });
 
-  // handleResetPass
-  //   const handleResetPass = (email: string) => {
-  //     //resetPassword(email);
-  //   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className='form-group'>
         <label htmlFor='current-log-email'>Username or email*</label>
         <input
-          value={values.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          // value={values.email}
+          // onChange={handleChange}
+          // onBlur={handleBlur}
           type='email'
           name='email'
           placeholder='Email or username'
         />
-        {touched.email && <ErrorMsg error={errors.email} />}
+        {/* {touched.email && <ErrorMsg error={errors.email} />} */}
       </div>
 
       <div className='form-group'>
         <label htmlFor='current-log-password'>Password*</label>
         <input
-          value={values.password}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          // value={values.password}
+          // onChange={handleChange}
+          // onBlur={handleBlur}
           type={showPass ? 'text' : 'password'}
           name='password'
           placeholder='Password'
@@ -65,7 +41,7 @@ const LoginForm = () => {
           <i className='icon-76'></i>
         </span>
       </div>
-      {touched.password && <ErrorMsg error={errors.password} />}
+      {/* {touched.password && <ErrorMsg error={errors.password} />} */}
 
       {/* <div className='form-group chekbox-area'>
         <div className='edu-form-check'>

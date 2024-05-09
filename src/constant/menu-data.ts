@@ -50,12 +50,12 @@ const menu_data = [
       { title: 'Podcasts', link: '/podcasts', hot: false, new: false },
       { title: 'Articles', link: '/articles', hot: false, new: false },
       { title: 'Courses', link: '/courses', hot: false, new: false },
-      {
-        title: 'Create Article',
-        link: '/create-article',
-        hot: true,
-        new: false,
-      },
+      // {
+      //   title: 'Create Article',
+      //   link: '/create-article',
+      //   hot: true,
+      //   new: false,
+      // },
     ],
   },
 ];

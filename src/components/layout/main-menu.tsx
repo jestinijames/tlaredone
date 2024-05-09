@@ -1,9 +1,14 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import React from 'react';
 
 import menu_data from '@/constant/menu-data';
 
 const MainMenu = () => {
+  // Checking login credentials
+  const { data: sessionData, status } = useSession();
+
   return (
     <ul className='mainmenu'>
       {menu_data.map((menu, i) => (
@@ -20,6 +25,13 @@ const MainMenu = () => {
                   </Link>
                 </li>
               ))}
+              {status === 'authenticated' && (
+                <li>
+                  <Link href='/create-article'>
+                    Create Article<span className='badge-1'>Admin</span>
+                  </Link>
+                </li>
+              )}
             </ul>
           )}
           {/* {menu.mega_menu && (

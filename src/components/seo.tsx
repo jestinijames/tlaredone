@@ -1,3 +1,4 @@
+'use client';
 import Head from 'next/head';
 
 const SEO = ({ pageTitle, font }: { pageTitle: string; font?: string }) => (

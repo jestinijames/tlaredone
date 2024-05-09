@@ -9,6 +9,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 import { siteConfig } from '@/constant/config';
 import AuthProvider from '@/providers/AuthProvider';
+import { TRPCReactProvider } from '@/trpc/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -42,12 +43,14 @@ export default function RootLayout({
     <html>
       <body>
         <ReduxProvider>
-          <AuthProvider>
-            <ThemeProvider defaultTheme='light'>
-              {children}
-              <Theme />
-            </ThemeProvider>
-          </AuthProvider>
+          <TRPCReactProvider>
+            <AuthProvider>
+              <ThemeProvider defaultTheme='light'>
+                {children}
+                <Theme />
+              </ThemeProvider>
+            </AuthProvider>
+          </TRPCReactProvider>
         </ReduxProvider>
       </body>
     </html>

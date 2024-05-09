@@ -3,4 +3,5 @@ export const siteConfig = {
   description: 'A Mind For Truth, A Passion For God',
   url: 'https://truthandlifeacademy.org',
   email: 'info@truthandlifeacademy.org',
+  supportEmail: 'revanth.tirunamalli.tla@gmail.com',
 };
