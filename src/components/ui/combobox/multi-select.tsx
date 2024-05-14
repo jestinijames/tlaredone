@@ -26,15 +26,5 @@ export default function MultiSelect({
     setSelectedOptions(newArray);
   }
 
-  return (
-    // <AsyncSelect
-    //   isMulti
-    //   name='tags'
-    //   options={tags}
-    //   className='basic-multi-select'
-    //   classNamePrefix='select'
-    // />
-
-    <Select isMulti options={options} onChange={handleChange} />
-  );
+  return <Select isMulti options={options} onChange={handleChange} />;
 }
