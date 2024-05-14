@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { use } from 'react';
+
 import ArticleForm from '@/components/create-article/article.form';
 import TagForm from '@/components/create-article/tag-form';
 
@@ -20,8 +22,12 @@ export const ErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
   );
 };
 
-export default async function CreateArticleArea() {
-  const allTags = await api.tag.getTags();
+async function getTags() {
+  return await api.tag.getTags();
+}
+
+export default function CreateArticleArea() {
+  const allTags = use(getTags());
 
   //const session = await getServerAuthSession();
 
@@ -45,7 +51,6 @@ export default async function CreateArticleArea() {
     <section className='checkout-page-area section-gap-equal'>
       <div className='container'>
         <TagForm />
-        {/* @ts-expect-error Server Component */}
         <ArticleForm tags={allTags} />
       </div>
     </section>
