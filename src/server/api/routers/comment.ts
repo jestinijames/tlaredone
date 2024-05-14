@@ -14,11 +14,14 @@ export const commentRouter = createTRPCRouter({
         postId: z.string(),
       })
     )
-    .mutation(async ({ ctx: { db, session }, input }) => {
+    .mutation(async ({ input, ctx }) => {
+      const { session, db } = ctx;
+      const { user } = session;
+
       await db.comment.create({
         data: {
           ...input,
-          userId: session.user.id,
+          userId: user.id,
         },
       });
     }),
