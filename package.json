@@ -7,6 +7,7 @@
     "build": "next build",
     "build:scss": "sass styles/scss -o styles/css",
     "start": "next start",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && pnpm format",
     "lint:strict": "eslint --max-warnings=0 src",

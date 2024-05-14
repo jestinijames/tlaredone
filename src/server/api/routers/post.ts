@@ -1,5 +1,4 @@
-/* eslint-disable */
-import { TRPCError } from '@trpc/server';
+//import { TRPCError } from '@trpc/server';
 import slugify from 'slugify';
 import { z } from 'zod';
 
