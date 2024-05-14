@@ -3,7 +3,6 @@
 import ArticleForm from '@/components/create-article/article.form';
 import TagForm from '@/components/create-article/tag-form';
 
-import { getServerAuthSession } from '@/server/auth';
 import { api } from '@/trpc/server';
 
 export const ErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
@@ -24,7 +23,7 @@ export const ErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
 export default async function CreateArticleArea() {
   const allTags = await api.tag.getTags();
 
-  const session = await getServerAuthSession();
+  //const session = await getServerAuthSession();
 
   // if (!session?.user) {
   //   return (
@@ -46,7 +45,8 @@ export default async function CreateArticleArea() {
     <section className='checkout-page-area section-gap-equal'>
       <div className='container'>
         <TagForm />
-        {session && session?.user && allTags && <ArticleForm tags={allTags} />}
+        {/* @ts-expect-error Server Component */}
+        <ArticleForm tags={allTags} />
       </div>
     </section>
   );
