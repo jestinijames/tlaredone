@@ -1,0 +1,28 @@
+.option-active {
+  background-color: #000;
+  color: #fff;
+}
+
+.option-inactive {
+  color: #111;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-gray-600 {
+  color: #718096;
+}
+
+.origin-top {
+  transform-origin: top;
+}

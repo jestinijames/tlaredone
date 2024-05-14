@@ -1,4 +1,10 @@
+import { authRouter } from '@/server/api/routers/auth';
+import { commentRouter } from '@/server/api/routers/comment';
 import { postRouter } from '@/server/api/routers/post';
+import { suggestionsRouter } from '@/server/api/routers/suggestions';
+import { tagRouter } from '@/server/api/routers/tag';
+import { unsplashRouter } from '@/server/api/routers/unsplash';
+import { userRouter } from '@/server/api/routers/user';
 import { createCallerFactory, createTRPCRouter } from '@/server/api/trpc';
 
 /**
@@ -8,6 +14,12 @@ import { createCallerFactory, createTRPCRouter } from '@/server/api/trpc';
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  auth: authRouter,
+  unsplash: unsplashRouter,
+  tag: tagRouter,
+  user: userRouter,
+  comment: commentRouter,
+  suggestions: suggestionsRouter,
 });
 
 // export type definition of API

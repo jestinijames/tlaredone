@@ -24,6 +24,10 @@ export const env = createEnv({
     ),
     GOOGLE_CLIENT_ID: z.string(),
     GOOGLE_CLIENT_SECRET: z.string(),
+    SUPABASE_PUBLIC_URL: z.string(),
+    SUPABASE_SECRET_KEY: z.string(),
+    UNSPLASH_API_ACCESS_KEY: z.string(),
+    UNSPLASH_API_SECRET_KEY: z.string(),
   },
 
   /**
@@ -46,6 +50,10 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    SUPABASE_PUBLIC_URL: process.env.SUPABASE_PUBLIC_URL,
+    SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
+    UNSPLASH_API_ACCESS_KEY: process.env.UNSPLASH_API_ACCESS_KEY,
+    UNSPLASH_API_SECRET_KEY: process.env.UNSPLASH_API_SECRET_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
