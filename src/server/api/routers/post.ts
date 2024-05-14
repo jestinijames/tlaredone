@@ -38,18 +38,18 @@ export const postRouter = createTRPCRouter({
       const { session, db } = ctx;
       const { user } = session;
 
-      const existingPost = await db.post.findUnique({
-        where: {
-          title: input.title,
-        },
-      });
+      // const existingPost = await db.post.findUnique({
+      //   where: {
+      //     title: input.title,
+      //   },
+      // });
 
-      if (existingPost) {
-        throw new TRPCError({
-          code: 'CONFLICT',
-          message: 'post with this title already exists!',
-        });
-      }
+      // if (existingPost) {
+      //   throw new TRPCError({
+      //     code: 'CONFLICT',
+      //     message: 'post with this title already exists!',
+      //   });
+      // }
 
       await db.post.create({
         data: {
