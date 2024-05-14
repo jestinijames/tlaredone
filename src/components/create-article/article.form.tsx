@@ -47,11 +47,6 @@ const ArticleForm = ({ tags }: { tags: any }) => {
   const utils = api.useUtils();
 
   const createPost = api.post.createPost.useMutation({
-    // onSuccess: () => {
-    //   router.refresh();
-    //   setName('');
-    // },
-
     onSuccess: () => {
       utils.post.getPosts.invalidate();
       toast.success('yey 🥳, post created successfully!');

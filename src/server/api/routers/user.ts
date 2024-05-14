@@ -4,15 +4,16 @@ import mime from 'mime-types';
 import isDataURI from 'validator/lib/isDataURI';
 import { z } from 'zod';
 
+import { env } from '@/env';
 import {
   createTRPCRouter,
   protectedProcedure,
   publicProcedure,
 } from '@/server/api/trpc';
 
-const supabaseURL = process.env.SUPABASE_URL ?? '';
-const supaBaseSecre = process.env.SUPABASE_SECRET_KEY ?? '';
-const supabase = createClient(supabaseURL, supaBaseSecre);
+const supabaseURL = env.SUPABASE_PUBLIC_URL ?? '';
+const supaBaseSecret = env.SUPABASE_SECRET_KEY ?? '';
+const supabase = createClient(supabaseURL, supaBaseSecret);
 
 export const userRouter = createTRPCRouter({
   cuploadAvatar: protectedProcedure

@@ -2,10 +2,11 @@ import { TRPCError } from '@trpc/server';
 import { createApi } from 'unsplash-js';
 import { z } from 'zod';
 
+import { env } from '@/env';
 import { createTRPCRouter, protectedProcedure } from '@/server/api/trpc';
 
 const unsplash = createApi({
-  accessKey: process.env.UNSPLASH_ACCESS_KEY ?? '',
+  accessKey: env.UNSPLASH_API_ACCESS_KEY ?? '',
 });
 
 export const unsplashRouter = createTRPCRouter({
