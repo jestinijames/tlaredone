@@ -2,23 +2,25 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { z } from 'zod';
 
-import { ErrorMessage } from '@/components/create-article/article.form';
+import { ErrorMessage } from '@/components/create-article/article-form';
 
 import { api } from '@/trpc/react';
 
 const tagSchema = z.object({
   name: z.string().min(3).max(20),
-  description: z.string().min(10).max(400),
+  description: z.string().max(400).optional().nullable(),
 });
 
 const TagForm = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const router = useRouter();
   const utils = api.useUtils();
 
   const { mutate: createTag, isPending } = api.tag.createTag.useMutation({
@@ -26,6 +28,7 @@ const TagForm = () => {
       toast.success('tag added successfully!');
       reset();
       utils.tag.getTags.invalidate();
+      router.refresh();
     },
   });
 

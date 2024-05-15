@@ -1,4 +1,5 @@
 import { authRouter } from '@/server/api/routers/auth';
+import { commentRouter } from '@/server/api/routers/comment';
 import { postRouter } from '@/server/api/routers/post';
 import { suggestionsRouter } from '@/server/api/routers/suggestions';
 import { tagRouter } from '@/server/api/routers/tag';
@@ -17,6 +18,7 @@ export const appRouter = createTRPCRouter({
   unsplash: unsplashRouter,
   tag: tagRouter,
   user: userRouter,
+  comment: commentRouter,
   suggestions: suggestionsRouter,
 });
 

@@ -2,9 +2,10 @@
 
 import { use } from 'react';
 
-import ArticleForm from '@/components/create-article/article.form';
+import ArticleForm from '@/components/create-article/article-form';
 import TagForm from '@/components/create-article/tag-form';
 
+import { getServerAuthSession } from '@/server/auth';
 import { api } from '@/trpc/server';
 
 export const ErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
@@ -22,30 +23,26 @@ export const ErrorMessage = ({ errorMessage }: { errorMessage?: string }) => {
   );
 };
 
+async function getSessionUser() {
+  const session = await getServerAuthSession();
+  return session?.user;
+}
+
 async function getTags() {
   return await api.tag.getTags();
 }
 
 export default function CreateArticleArea() {
-  const allTags = use(getTags());
-
-  //const session = await getServerAuthSession();
-
-  // if (!session?.user) {
-  //   return (
-  //     <section className='checkout-page-area section-gap-equal'>
-  //       <div className='container'>
-  //         <div className='row row--25'>
-  //           <div>
-  //             <div className='checkout-billing'>
-  //               <h3 className='title'>You are not allowed here!!</h3>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </section>
-  //   );
-  // }
+  let allTags: {
+    id: string;
+    name: string;
+    description: string;
+    slug: string;
+  }[] = [];
+  const user = use(getSessionUser());
+  if (user) {
+    allTags = use(getTags());
+  }
 
   return (
     <section className='checkout-page-area section-gap-equal'>

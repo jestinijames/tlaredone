@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -22,6 +23,7 @@ interface IFormInputs {
   title: string;
   description: string;
   text: string;
+  featuredImage: string;
 }
 
 type Option = { label: string; id: string };
@@ -30,12 +32,14 @@ const postSchema = z.object({
   title: z.string().min(20).max(40),
   description: z.string().min(95).max(200),
   text: z.string().min(80),
+  featuredImage: z.string().min(80),
 });
 
 const ArticleForm = ({ tags }: { tags: any }) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     reset,
     control,
@@ -60,6 +64,24 @@ const ArticleForm = ({ tags }: { tags: any }) => {
 
   const [selectedTags, setSelectedTags] = useState<Option[]>([]);
 
+  const [query, setQuery] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const { data } = api.unsplash.getImages.useQuery(
+    { query: searchTerm },
+    {
+      enabled: !!searchTerm, // Only run the query if searchTerm is not empty
+    }
+  );
+
+  const handleSearch = (
+    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    if (query.length >= 5) {
+      setSearchTerm(query);
+    }
+  };
+
   return (
     <form
       onSubmit={handleSubmit((data) =>
@@ -74,6 +96,85 @@ const ArticleForm = ({ tags }: { tags: any }) => {
         <div>
           <div className='checkout-billing'>
             <h3 className='title'>Create Article</h3>
+
+            {/* Image Selector Component */}
+            <div className='checkout-notice'>
+              <div className='coupn-box'>
+                <div>
+                  <div
+                    style={{ marginTop: '2rem', marginBottom: '2rem' }}
+                    className='edu-footer-widget'
+                  >
+                    <h4 className='widget-title'>Article Image</h4>
+                    <div className='inner'>
+                      <p className='description'>
+                        Type your search here to select an image ....
+                      </p>
+                      <div className='input-group footer-subscription-form'>
+                        <input
+                          className='form-control'
+                          onChange={(e) => setQuery(e.target.value)}
+                          type='text'
+                          placeholder='Search Image...'
+                        />
+                        <button
+                          className='edu-btn btn-secondary btn-medium'
+                          type='button'
+                          onClick={handleSearch}
+                        >
+                          Search <i className='icon-4'></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    style={{ marginTop: '2rem', marginBottom: '2rem' }}
+                    className='isotope-list gallery-grid-wrap'
+                  >
+                    <div
+                      id='animated-thumbnials'
+                      className='edublink-react-gallery-grid'
+                    >
+                      <div className='row g-5'>
+                        {data?.results.map((photo) => (
+                          <div
+                            key={photo.id}
+                            className='col-lg-4 col-md-6'
+                            style={{ cursor: 'pointer' }}
+                          >
+                            <div
+                              onClick={() =>
+                                setValue('featuredImage', photo.urls.full)
+                              }
+                              className='edu-popup-image edu-gallery-grid w-100'
+                            >
+                              <div className='thumbnail'>
+                                <Image
+                                  className='w-100'
+                                  src={photo.urls.small}
+                                  alt={
+                                    photo.alt_description ??
+                                    photo.description ??
+                                    ''
+                                  }
+                                  width={photo.width}
+                                  height={photo.height}
+                                />
+                              </div>
+                              <div className='zoom-icon'>
+                                <i className='icon-69'></i>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className='row g-lg-5'>
               <div className='col-lg-6'>
                 <div className='form-group'>
@@ -101,6 +202,19 @@ const ArticleForm = ({ tags }: { tags: any }) => {
                     disabled={createPost.isPending}
                   />
                   <ErrorMessage errorMessage={errors.title?.message} />
+                </div>
+              </div>
+              <div className='col-lg-6'>
+                <div className='form-group'>
+                  <label>Image*</label>
+                  <input
+                    type='text'
+                    id='image'
+                    //{...register('featuredImage')}
+                    placeholder='image'
+                    //disabled
+                  />
+                  <ErrorMessage errorMessage={errors.featuredImage?.message} />
                 </div>
               </div>
 
