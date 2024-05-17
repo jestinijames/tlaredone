@@ -10,7 +10,7 @@ type Option = { label: string; id: string };
 // type ReactSelectOption = { label: string; value: string };
 
 type AutoCompleteProps = {
-  options: Option[];
+  options: any;
   setSelectedOptions: React.Dispatch<React.SetStateAction<Option[]>>;
 };
 

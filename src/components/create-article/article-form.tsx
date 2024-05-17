@@ -35,7 +35,7 @@ const postSchema = z.object({
   featuredImage: z.string().min(80),
 });
 
-const ArticleForm = ({ tags }: { tags: any }) => {
+const ArticleForm = () => {
   const {
     register,
     handleSubmit,
@@ -50,10 +50,12 @@ const ArticleForm = ({ tags }: { tags: any }) => {
   const router = useRouter();
   const utils = api.useUtils();
 
+  const { data: tags } = api.tag.getTags.useQuery();
+
   const createPost = api.post.createPost.useMutation({
     onSuccess: () => {
       utils.post.getPosts.invalidate();
-      toast.success('yey 🥳, post created successfully!');
+      toast.success('Post has been created successfully!');
       reset();
       router.refresh();
     },
@@ -181,7 +183,7 @@ const ArticleForm = ({ tags }: { tags: any }) => {
                   <label>Tags*</label>
 
                   <MultiSelect
-                    options={tags.map((tag: { name: any; id: any }) => ({
+                    options={tags?.map((tag: { name: any; id: any }) => ({
                       label: tag.name,
                       value: tag.id,
                     }))}
@@ -209,8 +211,8 @@ const ArticleForm = ({ tags }: { tags: any }) => {
                   <label>Image*</label>
                   <input
                     type='text'
-                    id='image'
-                    //{...register('featuredImage')}
+                    id='featuredImage'
+                    {...register('featuredImage')}
                     placeholder='image'
                     //disabled
                   />

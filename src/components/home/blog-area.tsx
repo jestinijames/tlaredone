@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -18,8 +19,8 @@ const BlogArea = () => {
           data-sal='slide-up'
           data-sal-duration='800'
         >
-          <span className='pre-title'>Latest Articles</span>
-          <h2 className='title'>Get News with EduBlink</h2>
+          <span className='pre-title'>Trending Articles</span>
+          <h2 className='title'>Check out our trending articles!</h2>
           <span className='shape-line'>
             <i className='icon-19'></i>
           </span>
@@ -34,40 +35,42 @@ const BlogArea = () => {
             <div className='edu-blog blog-style-2 first-large-blog'>
               <div className='inner'>
                 <div className='thumbnail'>
-                  <Link href={`/blog-details/${large_blog?.id}`}>
-                    <img src={large_blog?.img} alt='Blog Images' />
+                  <Link href={`/articles/article/${large_blog?.id}`}>
+                    {large_blog?.img && (
+                      <Image
+                        height={370}
+                        width={540}
+                        src={large_blog?.img}
+                        alt={large_blog.title}
+                      />
+                    )}
                   </Link>
                 </div>
                 <div className='content'>
-                  {/* <div className='blog-date'>
-                    <span className='day'>
-                      {large_blog?.date.split(' ')[1]}
-                    </span>
-                    <span className='month'>
-                      {large_blog?.date.split(' ')[0]}
-                    </span>
-                  </div> */}
                   <div className='category-wrap'>
                     <Link
                       className='blog-category'
-                      href={`/blog-details/${large_blog?.id}`}
+                      href={`/articles/article/${large_blog?.id}`}
                     >
                       {large_blog?.category}
                     </Link>
                   </div>
                   <h4 className='title'>
-                    <Link href={`/blog-details/${large_blog?.id}`}>
+                    <Link href={`/articles/article/${large_blog?.id}`}>
                       {large_blog?.title}
                     </Link>
                   </h4>
                   <p>
-                    Lorem ipsum dolor sit amet consec tetur adipisicing sed
-                    eiusmod tempor incid idunt labore.
+                    It is important to remember, right at the outset, that
+                    slavery in the Bible was not like the well-known slave trade
+                    of the last few centuries.
                   </p>
                   <ul className='blog-meta'>
                     <li>
                       <i className='icon-25'></i>{' '}
-                      <a href='#'>{large_blog?.author}</a>
+                      <a href='/faculty/member/revanth-t'>
+                        {large_blog?.author}
+                      </a>
                     </li>
                     {/* <li>
                       <i className='icon-28'></i>Com {large_blog?.comment}
@@ -90,8 +93,8 @@ const BlogArea = () => {
                 <div key={id} className='edu-blog blog-style-2'>
                   <div className='inner'>
                     <div className='thumbnail'>
-                      <Link href={`/blog-details/${id}`}>
-                        <img src={img} alt='Blog Images' />
+                      <Link href={`/articles/article/${id}`}>
+                        <Image height={170} width={240} src={img} alt={title} />
                       </Link>
                       {/* <div className='blog-date'>
                         <span className='day'>{date.split(' ')[1]}</span>
@@ -112,7 +115,8 @@ const BlogArea = () => {
                       </h5>
                       <ul className='blog-meta'>
                         <li>
-                          <i className='icon-25'></i> <a href='#'>{author}</a>
+                          <i className='icon-25'></i>{' '}
+                          <a href='/faculty/member/revanth-t'>{author}</a>
                         </li>
                         {/* <li>
                           <i className='icon-28'></i>Com {comment}

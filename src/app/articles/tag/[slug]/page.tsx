@@ -1,8 +1,8 @@
-import ArticlePage from '@/components/article';
+import ArticlesList from '@/components/articles-by-tag';
 import Wrapper from '@/components/layout/wrapper';
 import SEO from '@/components/seo';
 
-export default function ArticleDetail({
+export default function ArticlesByTag({
   params,
 }: {
   params: { slug: string };
@@ -11,7 +11,7 @@ export default function ArticleDetail({
     <>
       <Wrapper>
         <SEO pageTitle='Article' />
-        <ArticlePage slug={params.slug} />
+        <ArticlesList slug={params.slug} />
       </Wrapper>
     </>
   );

@@ -1,12 +1,66 @@
-/* eslint-disable @next/next/no-img-element */
+'use client';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import { Interweave } from 'interweave';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useSession } from 'next-auth/react';
+import React, { useEffect, useState } from 'react';
+import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
 
 import ArticleCommentForm from '@/components/article/article-comment-form';
 import ArticleSidebar from '@/components/article/article-sidebar';
 import CommentArea from '@/components/article/comment-area';
 
-const ArticleDetailsArea = ({ blog }: { blog: any }) => {
+import { api } from '@/trpc/react';
+const ArticleDetailsArea = ({ slug }: { slug: string }) => {
+  const utils = api.useContext();
+  const { data: sessionData } = useSession();
+
+  const { data: blog, isSuccess } = api.post.getPost.useQuery(
+    { slug: slug as string, userId: sessionData?.user?.id },
+    {
+      enabled: !!slug,
+    }
+  );
+
+  const [{ isLiked, likesCount }, setLikesObject] = useState({
+    isLiked: Boolean(blog?.likes && blog.likes.length > 0),
+    likesCount: blog?._count.likes ?? 0,
+  });
+
+  useEffect(() => {
+    setLikesObject({
+      isLiked: Boolean(blog?.likes && blog.likes.length > 0),
+      likesCount: blog?._count.likes ?? 0,
+    });
+  }, [blog]);
+
+  const likePost = api.post.likePost.useMutation({
+    onSuccess: () => {
+      setLikesObject(({ likesCount }) => ({
+        isLiked: true,
+        likesCount: likesCount + 1,
+      }));
+      utils.post.getPost.invalidate({
+        slug: slug as string,
+        userId: sessionData?.user?.id,
+      });
+    },
+  });
+  const dislikePost = api.post.dislikePost.useMutation({
+    onSuccess: () => {
+      setLikesObject(({ likesCount }) => ({
+        isLiked: false,
+        likesCount: likesCount - 1,
+      }));
+      utils.post.getPost.invalidate({
+        slug: slug as string,
+        userId: sessionData?.user?.id,
+      });
+    },
+  });
+
   return (
     <div className='blog-details-area section-gap-equal'>
       <div className='container'>
@@ -14,112 +68,56 @@ const ArticleDetailsArea = ({ blog }: { blog: any }) => {
           <div className='col-lg-8'>
             <div className='blog-details-content'>
               <div className='entry-content'>
-                <span className='category'>Developer</span>
-                <h3 className='title'>{blog?.title}</h3>
-                <ul className='blog-meta'>
-                  <li>
-                    <i className='icon-27'></i>
-                    {blog?.date}
-                  </li>
-                  <li>
-                    <i className='icon-28'></i>Com {blog?.comment}
-                  </li>
-                </ul>
-                <div className='thumbnail'>
-                  <img src='/images/blog/blog-large-1.jpg' alt='Blog Image' />
-                </div>
+                <span className='category'>Article</span>
+                {isSuccess && <h3 className='title'> {blog?.title} </h3>}
+                {blog && (
+                  <ul className='blog-meta'>
+                    {!likePost.isPending &&
+                      !dislikePost.isPending &&
+                      (isLiked ? (
+                        <li>
+                          <FcLike
+                            style={{
+                              cursor: 'pointer',
+                              fontSize: '1.5rem',
+                              lineHeight: '2rem',
+                            }}
+                            className='cursor-pointer text-2xl'
+                            onClick={() =>
+                              dislikePost.mutate({ postId: blog.id })
+                            }
+                          />
+                          {likesCount}
+                        </li>
+                      ) : (
+                        <li>
+                          <FcLikePlaceholder
+                            style={{
+                              cursor: 'pointer',
+                              fontSize: '1.5rem',
+                              lineHeight: '2rem',
+                            }}
+                            className='cursor-pointer text-2xl'
+                            onClick={() => likePost.mutate({ postId: blog.id })}
+                          />{' '}
+                          {likesCount}
+                        </li>
+                      ))}
+                  </ul>
+                )}
+                {isSuccess && blog?.featuredImage && (
+                  <div className='thumbnail'>
+                    <Image
+                      height={750}
+                      width={420}
+                      src={blog?.featuredImage}
+                      alt={blog?.title}
+                    />
+                  </div>
+                )}
               </div>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor inc idid unt ut labore et dolore magna aliqua
-                enim ad minim veniam, quis nostrud exerec tation ullamco laboris
-                nis aliquip commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur enim ipsam voluptatem quia voluptas sit
-                aspernatur aut odit aut fugit sed quia consequuntur magni
-                dolores.{' '}
-              </p>
-
-              <p>
-                Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-                officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium totam rem aperiam.
-              </p>
-              <ul>
-                <li>Aute irure dolor in reprehenderit</li>
-                <li>Occaecat cupidatat non proident sunt in culpa</li>
-                <li>Pariatur enim ipsam.</li>
-              </ul>
-
-              <blockquote>
-                <p>
-                  Lorem ipsum dolor amet con sectur elitadicing elit sed do
-                  usmod tempor uincididunt enim minim veniam nostrud.
-                </p>
-                <h5 className='author'>Simon Baker</h5>
-              </blockquote>
-
-              <h3 className='title'>The Complete Camtasia</h3>
-              <p>
-                Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-                officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium totam rem aperiam.{' '}
-              </p>
-
-              <div className='features-image'>
-                <div className='row g-md-5'>
-                  <div className='col-6'>
-                    <div className='thumb'>
-                      <img
-                        src='/images/blog/features-1.jpg'
-                        alt='Features Images'
-                      />
-                    </div>
-                  </div>
-                  <div className='col-6'>
-                    <div className='thumb'>
-                      <img
-                        src='/images/blog/features-2.jpg'
-                        alt='Features Images'
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <p>
-                Consectetur adipisicing elit, sed do eiusmod tempor inc idid unt
-                ut labore et dolore magna aliqua enim ad minim veniam, quis
-                nostrud exerec tation ullamco laboris nis aliquip commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur enim ipsam
-                voluptatem quia voluptas sit aspernatur aut odit aut fugit sed
-                quia consequuntur magni dolores.{' '}
-              </p>
-
-              <p>
-                Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-                officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium totam rem aperiam.
-              </p>
-
-              <h3 className='title'>Intrinsic Motivation</h3>
-              <p>
-                Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-                officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium totam rem aperiam.{' '}
-              </p>
-
-              <ul>
-                <li>Aute irure dolor in reprehenderit</li>
-                <li>Occaecat cupidatat non proident sunt in culpa</li>
-                <li>Pariatur enim ipsam.</li>
-              </ul>
+              <Interweave content={blog?.text} />
 
               <div className='blog-share-area'>
                 <div className='row align-items-center'>
@@ -127,9 +125,11 @@ const ArticleDetailsArea = ({ blog }: { blog: any }) => {
                     <div className='blog-tags'>
                       <h6 className='title'>Tags:</h6>
                       <div className='tag-list'>
-                        <a href='#'>Language</a>
-                        <a href='#'>eLearn</a>
-                        <a href='#'>Tips</a>
+                        {blog?.tags.map((tag) => (
+                          <Link href={`/articles/tag/${tag.id}`} key={tag.id}>
+                            {tag.name}
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -162,14 +162,16 @@ const ArticleDetailsArea = ({ blog }: { blog: any }) => {
 
             <div className='blog-author'>
               <div className='thumbnail'>
-                <img src='/images/blog/author-01.jpg' alt='Author Images' />
+                <Image
+                  width={100}
+                  height={100}
+                  src='/images/faculty/detail/revanth.jpg'
+                  alt='Revanth T'
+                />
               </div>
               <div className='author-content'>
-                <h5 className='title'>Edward Norton</h5>
-                <p>
-                  Enim ad minim veniam quis nostrud exercitation lamco laboris
-                  nisi ex commodo consequat aute irure.
-                </p>
+                <h5 className='title'>Revanth T</h5>
+
                 <ul className='social-share icon-transparent'>
                   <li>
                     <a href='#'>
@@ -194,21 +196,21 @@ const ArticleDetailsArea = ({ blog }: { blog: any }) => {
               <div className='row g-5'>
                 <div className='col-lg-6'>
                   <div className='blog-pagination-list prev-post'>
-                    <a href='#'>
+                    <Link href='/articles'>
                       <i className='icon-west'></i>
-                      <span>Instructional Design and Adult Learners</span>
-                    </a>
+                      <span>Back to articles home</span>
+                    </Link>
                   </div>
                 </div>
 
-                <div className='col-lg-6'>
+                {/* <div className='col-lg-6'>
                   <div className='blog-pagination-list next-post'>
                     <a href='#'>
                       <span>Qualification for Students Satisfaction Rate</span>
                       <i className='icon-east'></i>
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 

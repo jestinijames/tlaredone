@@ -128,6 +128,55 @@ export const postRouter = createTRPCRouter({
 
       return { posts, nextCursor: nextCursor };
     }),
+  getPostsByTag: publicProcedure
+    .input(
+      z.object({
+        tagId: z.string(),
+        cursor: z.string().nullish(),
+      })
+    )
+    .query(async ({ ctx, input: { tagId, cursor } }) => {
+      const { db } = ctx;
+
+      const posts = await db.post.findMany({
+        where: {
+          tags: {
+            some: {
+              id: tagId,
+            },
+          },
+        },
+        select: {
+          title: true,
+          description: true,
+          slug: true,
+          featuredImage: true,
+          createdAt: true,
+          tags: true,
+          id: true,
+          author: {
+            select: {
+              name: true,
+              image: true,
+              username: true,
+            },
+          },
+        },
+        orderBy: {
+          createdAt: 'asc',
+        },
+        take: LIMIT + 1,
+        cursor: cursor ? { id: cursor } : undefined,
+      });
+
+      let nextCursor: typeof cursor | undefined = undefined;
+      if (posts.length > LIMIT) {
+        const nextItem = posts.pop();
+        if (nextItem) nextCursor = nextItem.id;
+      }
+
+      return { posts, nextCursor: nextCursor };
+    }),
   getPost: publicProcedure
     .input(
       z.object({
@@ -180,6 +229,93 @@ export const postRouter = createTRPCRouter({
 
       return post;
     }),
+
+  getLatestPosts: publicProcedure.query(async ({ ctx }) => {
+    const { db } = ctx;
+    const latestPosts = await db.post.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+      take: 3,
+      select: {
+        title: true,
+        featuredImage: true,
+        id: true,
+        slug: true, // Include slug for linking purposes
+      },
+    });
+    return latestPosts;
+  }),
+
+  getArticlesBySearch: publicProcedure
+    .input(
+      z.object({
+        keyword: z.string().optional(),
+        cursor: z.string().nullish(),
+        limit: z.number().optional().default(6),
+      })
+    )
+    .query(async ({ input, ctx }) => {
+      const { db } = ctx;
+      const { keyword, cursor, limit } = input;
+
+      let posts;
+
+      if (keyword) {
+        posts = await db.post.findMany({
+          where: {
+            OR: [
+              { title: { contains: keyword, mode: 'insensitive' } },
+              {
+                tags: {
+                  some: {
+                    name: {
+                      contains: keyword,
+                      mode: 'insensitive',
+                    },
+                  },
+                },
+              },
+            ],
+          },
+          take: limit + 1,
+          cursor: cursor ? { id: cursor } : undefined,
+          orderBy: { createdAt: 'asc' },
+          select: {
+            id: true,
+            description: true,
+            title: true,
+            featuredImage: true,
+            slug: true,
+          },
+        });
+      } else {
+        posts = await db.post.findMany({
+          orderBy: {
+            createdAt: 'asc',
+          },
+          select: {
+            title: true,
+            id: true,
+            description: true,
+            featuredImage: true,
+            slug: true,
+          },
+        });
+      }
+
+      let nextCursor: string | undefined = undefined;
+      if (posts.length > limit) {
+        const nextItem = posts.pop();
+        nextCursor = nextItem?.id;
+      }
+
+      return {
+        posts,
+        nextCursor,
+      };
+    }),
+
   updatePost: protectedProcedure
     .input(
       z
@@ -210,6 +346,7 @@ export const postRouter = createTRPCRouter({
         },
       });
     }),
+
   bookmarkPost: protectedProcedure
     .input(
       z.object({
@@ -269,5 +406,35 @@ export const postRouter = createTRPCRouter({
           },
         },
       });
+    }),
+
+  deletePost: protectedProcedure
+    .input(
+      z.object({
+        postId: z.string(),
+      })
+    )
+    .mutation(async ({ ctx, input: { postId } }) => {
+      const { db } = ctx;
+
+      // Check if the post exists
+      const existingPost = await db.post.findUnique({
+        where: {
+          id: postId,
+        },
+      });
+
+      if (!existingPost) {
+        throw new Error('Post not found');
+      }
+
+      // Delete the post
+      await db.post.delete({
+        where: {
+          id: postId,
+        },
+      });
+
+      return { success: true };
     }),
 });
