@@ -8,9 +8,7 @@ import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
 import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
 
-import ArticleCommentForm from '@/components/article/article-comment-form';
 import ArticleSidebar from '@/components/article/article-sidebar';
-import CommentArea from '@/components/article/comment-area';
 
 import { api } from '@/trpc/react';
 const ArticleDetailsArea = ({ slug }: { slug: string }) => {
@@ -202,33 +200,19 @@ const ArticleDetailsArea = ({ slug }: { slug: string }) => {
                     </Link>
                   </div>
                 </div>
-
-                {/* <div className='col-lg-6'>
-                  <div className='blog-pagination-list next-post'>
-                    <a href='#'>
-                      <span>Qualification for Students Satisfaction Rate</span>
-                      <i className='icon-east'></i>
-                    </a>
-                  </div>
-                </div> */}
               </div>
             </div>
 
-            {/*  Start Comment Area  */}
-            <CommentArea />
-            {/*  End Comment Area  */}
+            {/* DONT DELETE: DISABLING COMMENTS FOR NOW*/}
+            {/* <CommentArea />
             <div className='comment-form-area'>
               <h3 className='heading-title'>Leave Your Comment Here</h3>
-              {/* form start */}
               <ArticleCommentForm />
-              {/* form end */}
-            </div>
+            </div> */}
           </div>
 
           <div className='col-lg-4'>
-            {/* sidebar start */}
             <ArticleSidebar />
-            {/* sidebar end */}
           </div>
         </div>
       </div>

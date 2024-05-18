@@ -4,7 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { useTheme } from 'next-themes';
 import React, { useState } from 'react';
+import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { TbPhonePlus } from 'react-icons/tb';
 
 import useSticky from '@/hooks/use-sticky';
@@ -23,6 +25,7 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
   const { sticky } = useSticky();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const { data, status } = useSession();
 
@@ -155,6 +158,32 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
                     <a style={{ cursor: 'pointer' }} className='search-trigger'>
                       <i className='icon-2'></i>
                     </a>
+                  </li>
+                  <li className='icon'>
+                    <Link
+                      className='wishlist mobile-menu-bar d-block d-xl-none'
+                      href='#'
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setTheme(theme === 'light' ? 'dark' : 'light');
+                      }}
+                    >
+                      {theme === 'light' ? (
+                        <BsFillMoonStarsFill
+                          style={{
+                            marginBottom: '1rem',
+                          }}
+                          className='icon-22'
+                        />
+                      ) : (
+                        <BsSunFill
+                          style={{
+                            marginBottom: '1rem',
+                          }}
+                          className='icon-22'
+                        />
+                      )}
+                    </Link>
                   </li>
 
                   <li className='mobile-menu-bar d-block d-xl-none'>
