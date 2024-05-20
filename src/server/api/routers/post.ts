@@ -1,3 +1,4 @@
+import { Post } from '@prisma/client';
 import { TRPCError } from '@trpc/server';
 import slugify from 'slugify';
 import { z } from 'zod';
@@ -23,7 +24,7 @@ export const postRouter = createTRPCRouter({
     .input(
       z
         .object({
-          title: z.string().min(20).max(40),
+          title: z.string().min(20).max(140),
           description: z.string().min(95).max(200),
           text: z.string().min(80),
         })
@@ -234,7 +235,7 @@ export const postRouter = createTRPCRouter({
     const { db } = ctx;
     const latestPosts = await db.post.findMany({
       orderBy: {
-        createdAt: 'desc',
+        createdAt: 'asc',
       },
       take: 3,
       select: {
@@ -245,6 +246,16 @@ export const postRouter = createTRPCRouter({
       },
     });
     return latestPosts;
+  }),
+
+  getRandomPosts: publicProcedure.query(async ({ ctx }) => {
+    const randomPosts: Post[] = await ctx.db.$queryRaw`
+      SELECT title, "featuredImage", id, slug 
+      FROM "Post" 
+      ORDER BY RANDOM() 
+      LIMIT 3
+    `;
+    return randomPosts;
   }),
 
   getArticlesBySearch: publicProcedure
@@ -320,7 +331,7 @@ export const postRouter = createTRPCRouter({
     .input(
       z
         .object({
-          title: z.string().min(20).max(40),
+          title: z.string().min(20).max(140),
           description: z.string().min(95).max(200),
           text: z.string().min(80),
         })
@@ -332,19 +343,30 @@ export const postRouter = createTRPCRouter({
         )
         .and(
           z.object({
+            tagIds: z.array(z.object({ id: z.string() })).optional(),
+          })
+        )
+        .and(
+          z.object({
             postId: z.string(),
           })
         )
     )
-    .mutation(async ({ ctx: { db }, input: { postId, ...data } }) => {
-      await db.post.update({
+    .mutation(async ({ ctx: { db }, input: { postId, tagIds, ...data } }) => {
+      const updatedPost = await db.post.update({
         where: {
           id: postId,
         },
         data: {
           ...data,
+          tags: tagIds
+            ? {
+                set: tagIds.map((tag) => ({ id: tag.id })),
+              }
+            : undefined,
         },
       });
+      return updatedPost;
     }),
 
   bookmarkPost: protectedProcedure

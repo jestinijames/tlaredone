@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { TbPhonePlus } from 'react-icons/tb';
 
@@ -30,6 +30,13 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
   const { data, status } = useSession();
 
   const router = useRouter();
+
+  // Ensuring that the component is only rendered on the client-side
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <>
@@ -160,30 +167,25 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
                     </a>
                   </li>
                   <li className='icon'>
-                    <Link
-                      className='wishlist mobile-menu-bar d-block d-xl-none'
-                      href='#'
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setTheme(theme === 'light' ? 'dark' : 'light');
-                      }}
-                    >
-                      {theme === 'light' ? (
-                        <BsFillMoonStarsFill
-                          style={{
-                            marginBottom: '1rem',
-                          }}
-                          className='icon-22'
-                        />
-                      ) : (
-                        <BsSunFill
-                          style={{
-                            marginBottom: '1rem',
-                          }}
-                          className='icon-22'
-                        />
-                      )}
-                    </Link>
+                    {isClient && (
+                      <button
+                        className='wishlist mobile-menu-bar d-block d-xl-none'
+                        style={{
+                          borderColor: 'rgba(0,0,0,0)',
+                          backgroundColor: 'transparent',
+                        }}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setTheme(theme === 'light' ? 'dark' : 'light');
+                        }}
+                      >
+                        {theme === 'light' ? (
+                          <BsFillMoonStarsFill className='icon-22' />
+                        ) : (
+                          <BsSunFill className='icon-22' />
+                        )}
+                      </button>
+                    )}
                   </li>
 
                   <li className='mobile-menu-bar d-block d-xl-none'>

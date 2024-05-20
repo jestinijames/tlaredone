@@ -6,7 +6,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Bounce, toast } from 'react-toastify';
 
 import PodcastItem from '@/components/podcasts/podcast-item';
-import Loader from '@/components/ui/loader';
 
 import { fetchData } from '@/utils/fetch-api';
 
@@ -57,7 +56,8 @@ const AllPodcasts = () => {
     fetchVideos();
   };
 
-  if (isLoading || videos.length === 0) return <Loader />;
+  if (isLoading || videos.length === 0)
+    return <div className='spinner-border' role='status' />;
 
   return (
     <>

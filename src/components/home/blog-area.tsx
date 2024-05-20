@@ -35,7 +35,7 @@ const BlogArea = () => {
             <div className='edu-blog blog-style-2 first-large-blog'>
               <div className='inner'>
                 <div className='thumbnail'>
-                  <Link href={`/articles/article/${large_blog?.id}`}>
+                  <Link href={large_blog?.link ?? ''}>
                     {large_blog?.img && (
                       <Image
                         height={370}
@@ -50,13 +50,13 @@ const BlogArea = () => {
                   <div className='category-wrap'>
                     <Link
                       className='blog-category'
-                      href={`/articles/article/${large_blog?.id}`}
+                      href={large_blog?.link ?? ''}
                     >
                       {large_blog?.category}
                     </Link>
                   </div>
                   <h4 className='title'>
-                    <Link href={`/articles/article/${large_blog?.id}`}>
+                    <Link href={large_blog?.link ?? ''}>
                       {large_blog?.title}
                     </Link>
                   </h4>
@@ -88,12 +88,12 @@ const BlogArea = () => {
             data-sal-duration='800'
           >
             {sm_blogs.map((blog) => {
-              const { id, img, category, title, author } = blog;
+              const { id, img, category, title, author, link } = blog;
               return (
                 <div key={id} className='edu-blog blog-style-2'>
                   <div className='inner'>
                     <div className='thumbnail'>
-                      <Link href={`/articles/article/${id}`}>
+                      <Link href={link}>
                         <Image height={170} width={240} src={img} alt={title} />
                       </Link>
                       {/* <div className='blog-date'>
@@ -103,20 +103,17 @@ const BlogArea = () => {
                     </div>
                     <div className='content'>
                       <div className='category-wrap'>
-                        <Link
-                          className='blog-category'
-                          href={`/blog-details/${id}`}
-                        >
+                        <Link className='blog-category' href={link}>
                           {category}
                         </Link>
                       </div>
                       <h5 className='title'>
-                        <Link href={`/blog-details/${id}`}>{title}</Link>
+                        <Link href={link}>{title}</Link>
                       </h5>
                       <ul className='blog-meta'>
                         <li>
                           <i className='icon-25'></i>{' '}
-                          <a href='/faculty/member/revanth-t'>{author}</a>
+                          <Link href='/faculty/member/revanth-t'>{author}</Link>
                         </li>
                         {/* <li>
                           <i className='icon-28'></i>Com {comment}

@@ -5,16 +5,32 @@ import React from 'react';
 
 import { api } from '@/trpc/react';
 
+// types.ts or interfaces.ts
+export interface Post {
+  id: string;
+  title: string;
+  description: string;
+  slug: string;
+  featuredImage: string | null;
+  html: string;
+  text: string;
+  authorId: string;
+  isPublished: boolean | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 const LatestArticles = () => {
-  const { data: latestPosts, isLoading } = api.post.getLatestPosts.useQuery();
+  const { data: randomPosts, isLoading } =
+    api.post.getRandomPosts.useQuery<Post[]>();
 
   return (
     <div className='edu-blog-widget widget-latest-post'>
       <div className='inner'>
-        <h4 className='widget-title'>Latest Articles</h4>
+        <h4 className='widget-title'>Popular Articles</h4>
         <div className='content latest-post-list'>
           {isLoading && <div className='spinner-border' role='status' />}
-          {latestPosts?.map((post) => (
+          {randomPosts?.map((post: Post) => (
             <div key={post.id} className='latest-post'>
               <div className='thumbnail'>
                 <Link href={`/articles/article/${post.slug}`}>

@@ -71,7 +71,7 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
                 <Link href='/courses'>Courses</Link>
               </li>
               <li>
-                <Link href='/courses'>Articles</Link>
+                <Link href='/articles'>Articles</Link>
               </li>
               <li>
                 <Link href='/podcasts'>Podcasts</Link>

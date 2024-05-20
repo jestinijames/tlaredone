@@ -61,7 +61,9 @@ const ArticleItems = () => {
     return () => {
       clearTimeout(handler);
     };
-  }, [keyword, posts, searchPosts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [keyword]);
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.target.value);
   };
@@ -137,7 +139,13 @@ const ArticleItems = () => {
                               </button>
                             </li>
                             <li>
-                              <button type='button' className='btn btn-warning'>
+                              <button
+                                onClick={() => {
+                                  router.push(`/update-article/${slug}`);
+                                }}
+                                type='button'
+                                className='btn btn-warning'
+                              >
                                 Update
                               </button>
                             </li>

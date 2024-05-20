@@ -141,7 +141,7 @@ const HeroSlider = () => {
         </div>
       </Swiper>
 
-      <ul className='shape-group'>
+      {/* <ul className='shape-group'>
         <li
           className='shape-1 scene'
           data-sal-delay='1000'
@@ -161,7 +161,7 @@ const HeroSlider = () => {
         <li className='shape-3'>
           <img src='/images/others/shape-25.png' alt='Shape' />
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

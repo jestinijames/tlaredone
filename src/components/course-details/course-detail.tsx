@@ -63,14 +63,14 @@ const CourseDetail = ({ course }: { course: any }) => {
                     <div className='content'>
                       <h4 className='widget-title'>Additional Info:</h4>
                       <ul className='course-item'>
-                        {instructors.map((instructor: any) => (
+                        {/* {instructors.map((instructor: any) => (
                           <li key={instructor.id}>
                             <span className='label'>
                               <i className='icon-62'></i>Instructor:
                             </span>
                             <span className='value'>{instructor.name}</span>
                           </li>
-                        ))}
+                        ))} */}
 
                         <li>
                           <span className='label'>

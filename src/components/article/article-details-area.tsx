@@ -5,8 +5,19 @@ import { Interweave } from 'interweave';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
+import { useUrl } from 'nextjs-current-url';
 import React, { useEffect, useState } from 'react';
 import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+  XIcon,
+} from 'react-share';
 
 import ArticleSidebar from '@/components/article/article-sidebar';
 
@@ -58,6 +69,8 @@ const ArticleDetailsArea = ({ slug }: { slug: string }) => {
       });
     },
   });
+
+  const { href: currentUrl } = useUrl() ?? {};
 
   return (
     <div className='blog-details-area section-gap-equal'>
@@ -135,23 +148,33 @@ const ArticleDetailsArea = ({ slug }: { slug: string }) => {
                   <div className='col-md-5'>
                     <div className='blog-share'>
                       <h6 className='title'>Share on:</h6>
-                      <ul className='social-share icon-transparent'>
-                        <li>
-                          <a href='#'>
-                            <i className='icon-facebook'></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href='#'>
-                            <i className='icon-twitter'></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href='#'>
-                            <i className='icon-instagram'></i>
-                          </a>
-                        </li>
-                      </ul>
+                      {currentUrl && (
+                        <ul className='social-share icon-transparent'>
+                          <li>
+                            <FacebookShareButton url={currentUrl}>
+                              <FacebookIcon size={30} round />
+                            </FacebookShareButton>
+                          </li>
+                          <li>
+                            <TwitterShareButton url={currentUrl}>
+                              <XIcon size={30} round />
+                            </TwitterShareButton>
+                          </li>
+                          <li>
+                            <WhatsappShareButton url={currentUrl}>
+                              <WhatsappIcon size={30} round />
+                            </WhatsappShareButton>
+                          </li>
+                          <li>
+                            <LinkedinShareButton
+                              className='w-full'
+                              url={currentUrl}
+                            >
+                              <LinkedinIcon size={30} round />
+                            </LinkedinShareButton>
+                          </li>
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -172,19 +195,19 @@ const ArticleDetailsArea = ({ slug }: { slug: string }) => {
 
                 <ul className='social-share icon-transparent'>
                   <li>
-                    <a href='#'>
+                    <Link href='https://www.facebook.com/TandLA'>
                       <i className='icon-facebook'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='#'>
+                    <Link href='https://twitter.com/revanth03'>
                       <i className='icon-twitter'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href='#'>
+                    <Link href='https://www.instagram.com/truthandlifepod/'>
                       <i className='icon-instagram'></i>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

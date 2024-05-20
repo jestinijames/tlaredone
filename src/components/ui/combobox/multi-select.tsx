@@ -12,11 +12,13 @@ type Option = { label: string; id: string };
 type AutoCompleteProps = {
   options: any;
   setSelectedOptions: React.Dispatch<React.SetStateAction<Option[]>>;
+  defaultValue?: any;
 };
 
 export default function MultiSelect({
   options,
   setSelectedOptions,
+  defaultValue,
 }: AutoCompleteProps) {
   function handleChange(selectedTags: any) {
     const newArray = selectedTags.map((item: { label: any; value: any }) => ({
@@ -24,6 +26,17 @@ export default function MultiSelect({
       id: item.value, // Assuming you want to use the 'value' field as the id
     }));
     setSelectedOptions(newArray);
+  }
+
+  if (defaultValue) {
+    return (
+      <Select
+        isMulti
+        value={defaultValue}
+        options={options}
+        onChange={handleChange}
+      />
+    );
   }
 
   return <Select isMulti options={options} onChange={handleChange} />;

@@ -4,6 +4,7 @@ const blog_data = [
     img: '/images/blog/blog-04.jpg',
     category: 'ARTICLE',
     title: 'Why didn`t God abolish slavery?',
+    link: `/articles/article/Why-didn't-God-abolish-slavery`,
     date: 'JAN 10 2021',
     comment: 18,
     sm_desc:
@@ -17,6 +18,7 @@ const blog_data = [
     img: '/images/blog/blog-05.jpg',
     category: 'ARTICLE',
     title: 'Why did Jesus rise after Three days?',
+    link: `/articles/article/Why-did-Jesus-rise-after-Three-days`,
     date: 'SEP 10 2021',
     comment: 14,
     sm_desc:
@@ -29,6 +31,7 @@ const blog_data = [
     img: '/images/blog/blog-06.jpg',
     category: 'ARTICLE',
     title: 'Why are unbelievers often better than Christians?',
+    link: `/articles/article/Why-are-unbelievers-often-better-than-Christians`,
     date: 'SEP 18 2021',
     comment: 9,
     sm_desc:
@@ -41,6 +44,7 @@ const blog_data = [
     img: '/images/blog/blog-10.jpg',
     category: 'ARTICLE',
     title: 'Who is Jesus and what difference does it make?',
+    link: `/articles/article/Who-is-Jesus-and-what-difference-does-it-make`,
     date: 'SEP 25 2021',
     comment: 16,
     sm_desc:

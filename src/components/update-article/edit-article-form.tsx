@@ -12,7 +12,8 @@ const ReactQuill = dynamic(() => import('react-quill'), {
   ssr: false,
 });
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useSession } from 'next-auth/react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import 'react-quill/dist/quill.snow.css';
@@ -35,7 +36,7 @@ const postSchema = z.object({
   featuredImage: z.string().min(80),
 });
 
-const ArticleForm = () => {
+const EditArticleForm = ({ slug }: { slug: string }) => {
   const {
     register,
     handleSubmit,
@@ -51,20 +52,27 @@ const ArticleForm = () => {
   const utils = api.useUtils();
 
   const { data: tags } = api.tag.getTags.useQuery();
-  const [selectedTags, setSelectedTags] = useState<Option[]>([]);
+  const { data: sessionData } = useSession();
+  const { data: blog, isSuccess } = api.post.getPost.useQuery(
+    { slug: slug as string, userId: sessionData?.user?.id },
+    {
+      enabled: !!slug,
+    }
+  );
 
-  const createPost = api.post.createPost.useMutation({
+  const updatePost = api.post.updatePost.useMutation({
     onSuccess: () => {
       utils.post.getPosts.invalidate();
-      toast.success('Post has been created successfully!');
+      toast.success('Post has been updated successfully!');
       reset();
-      setSelectedTags([]);
-      router.refresh();
+      router.push('/articles');
     },
     onError(error) {
       toast.error(error.message);
     },
   });
+
+  const [selectedTags, setSelectedTags] = useState<Option[]>([]);
 
   const [query, setQuery] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -84,10 +92,29 @@ const ArticleForm = () => {
     }
   };
 
+  useEffect(() => {
+    if (isSuccess && blog) {
+      setValue('title', blog.title);
+      setValue('description', blog.description);
+      setValue('text', blog.text);
+
+      setSelectedTags(
+        blog.tags.map((tag: { name: string; id: string }) => ({
+          label: tag.name,
+          id: tag.id,
+        }))
+      );
+    }
+    if (blog?.featuredImage) {
+      setValue('featuredImage', blog.featuredImage);
+    }
+  }, [blog, isSuccess, setValue]);
+
   return (
     <form
       onSubmit={handleSubmit((data) =>
-        createPost.mutate({
+        updatePost.mutate({
+          postId: blog?.id ?? '',
           ...data,
           tagIds: selectedTags.map((tag) => ({ id: tag.id })),
         })
@@ -97,7 +124,7 @@ const ArticleForm = () => {
       <div className='row row--25'>
         <div>
           <div className='checkout-billing'>
-            <h3 className='title'>Create Article</h3>
+            <h3 className='title'>Update Article</h3>
 
             {/* Image Selector Component */}
             <div className='checkout-notice'>
@@ -183,7 +210,13 @@ const ArticleForm = () => {
                   <label>Tags*</label>
 
                   <MultiSelect
-                    options={tags?.map((tag: { name: any; id: any }) => ({
+                    defaultValue={selectedTags?.map(
+                      (tag: { label: string; id: string }) => ({
+                        label: tag.label,
+                        value: tag.id,
+                      })
+                    )}
+                    options={tags?.map((tag: { name: string; id: string }) => ({
                       label: tag.name,
                       value: tag.id,
                     }))}
@@ -201,7 +234,7 @@ const ArticleForm = () => {
                     id='title'
                     {...register('title')}
                     placeholder='title'
-                    disabled={createPost.isPending}
+                    disabled={updatePost.isPending}
                   />
                   <ErrorMessage errorMessage={errors.title?.message} />
                 </div>
@@ -225,7 +258,7 @@ const ArticleForm = () => {
                   <label>Short Description*</label>
                   <input
                     type='text'
-                    disabled={createPost.isPending}
+                    disabled={updatePost.isPending}
                     {...register('description')}
                     id='description'
                     placeholder='short description'
@@ -240,7 +273,7 @@ const ArticleForm = () => {
               <Controller
                 name='text'
                 control={control}
-                disabled={createPost.isPending}
+                disabled={updatePost.isPending}
                 render={({ field }) => (
                   <div
                     style={{
@@ -277,7 +310,7 @@ const ArticleForm = () => {
 
             <div className='form-group mt--50 mb-0'>
               <button type='submit' className='edu-btn order-place'>
-                Create <i className='icon-4'></i>
+                Update <i className='icon-4'></i>
               </button>
             </div>
           </div>
@@ -287,7 +320,7 @@ const ArticleForm = () => {
   );
 };
 
-export default ArticleForm;
+export default EditArticleForm;
 
 export function ErrorMessage({ errorMessage }: { errorMessage?: string }) {
   return (
