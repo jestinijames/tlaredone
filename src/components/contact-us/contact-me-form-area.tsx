@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React from 'react';
 
 import ContactMeForm from './contact-me-form';
@@ -20,16 +20,31 @@ const ContactMeFormArea = () => {
       </div>
       <ul className='shape-group'>
         <li className='shape-1 scene'>
-          <img src='/images/about/shape-15.png' alt='shape' />
+          <Image
+            height={39}
+            width={101}
+            src='/images/about/shape-15.png'
+            alt='shape'
+          />
         </li>
         <li className='shape-2 scene'>
-          <img src='/images/cta/shape-04.png' alt='shape' />
+          <Image
+            height={106}
+            width={106}
+            src='/images/cta/shape-04.png'
+            alt='shape'
+          />
         </li>
         <li className='shape-3 scene'>
           <span></span>
         </li>
         <li className='shape-4 scene'>
-          <img src='/images/about/shape-13.png' alt='shape' />
+          <Image
+            height={186}
+            width={186}
+            src='/images/about/shape-13.png'
+            alt='shape'
+          />
         </li>
       </ul>
     </section>

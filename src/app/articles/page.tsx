@@ -1,12 +1,17 @@
+import { Metadata } from 'next';
+
 import ArticlesList from '@/components/articles';
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
+
+export const metadata: Metadata = {
+  title: 'Articles',
+  description: 'Browse through our latest Articles.',
+};
 
 export default function Articles() {
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='Articles' />
         <ArticlesList />
       </Wrapper>
     </>

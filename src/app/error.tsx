@@ -1,16 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'; // Error components must be Client Components
 
+import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 
+import Breadcrumb from '@/components/breadcrumb';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
-import BreadcrumbTwo from '@/components/ui/breadcrumb-two';
 
-// import TextButton from '@/components/buttons/TextButton';
+export const metadata: Metadata = {
+  title: 'Error Page',
+  description: '404.',
+};
 
 export default function Error({
   error,
@@ -25,27 +29,51 @@ export default function Error({
 
   return (
     <Wrapper>
-      <SEO pageTitle='404 Page' />
       <Header />
-      <BreadcrumbTwo title='Error-404' subtitle='Error-404' />
+      <Breadcrumb title='Error-404' current_page='Error-404' />
 
       <section className='section-gap-equal error-page-area'>
         <div className='container'>
           <div className='edu-error'>
             <div className='thumbnail'>
-              <img src='/images/others/404.png' alt='404 Error' />
+              <Image
+                height={286}
+                width={598}
+                src='/images/others/404.png'
+                alt='404 Error'
+              />
               <ul className='shape-group'>
                 <li className='shape-1 scene'>
-                  <img src='/images/about/shape-25.png' alt='Shape' />
+                  <Image
+                    height={186}
+                    width={186}
+                    src='/images/about/shape-25.png'
+                    alt='Shape'
+                  />
                 </li>
                 <li className='shape-2 scene'>
-                  <img src='/images/about/shape-15.png' alt='Shape' />
+                  <Image
+                    height={39}
+                    width={101}
+                    src='/images/about/shape-15.png'
+                    alt='Shape'
+                  />
                 </li>
                 <li className='shape-3 scene'>
-                  <img src='/images/about/shape-13.png' alt='Shape' />
+                  <Image
+                    height={186}
+                    width={186}
+                    src='/images/about/shape-13.png'
+                    alt='Shape'
+                  />
                 </li>
                 <li className='shape-4 scene'>
-                  <img src='/images/counterup/shape-02.png' alt='Shape' />
+                  <Image
+                    height={175}
+                    width={159}
+                    src='/images/counterup/shape-02.png'
+                    alt='Shape'
+                  />
                 </li>
               </ul>
             </div>
@@ -60,7 +88,12 @@ export default function Error({
         </div>
         <ul className='shape-group'>
           <li className='shape-1'>
-            <img src='/images/others/map-shape-2.png' alt='Shape' />
+            <Image
+              height={220}
+              width={660}
+              src='/images/others/map-shape-2.png'
+              alt='Shape'
+            />
           </li>
         </ul>
       </section>

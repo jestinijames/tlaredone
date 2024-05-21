@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -33,16 +33,36 @@ const AdBanner = ({ home_4 }: { home_4?: any }) => {
           </div>
           <ul className='shape-group'>
             <li className='shape-01 scene'>
-              <img src='/images/cta/shape-10.png' alt='shape' />
+              <Image
+                height={120}
+                width={120}
+                src='/images/cta/shape-10.png'
+                alt='shape'
+              />
             </li>
             <li className='shape-02 scene'>
-              <img src='/images/cta/shape-09.png' alt='shape' />
+              <Image
+                height={39}
+                width={101}
+                src='/images/cta/shape-09.png'
+                alt='shape'
+              />
             </li>
             <li className='shape-03 scene'>
-              <img src='/images/cta/shape-08.png' alt='shape' />
+              <Image
+                height={174}
+                width={158}
+                src='/images/cta/shape-08.png'
+                alt='shape'
+              />
             </li>
             <li className='shape-04 scene'>
-              <img src='/images/about/shape-13.png' alt='shape' />
+              <Image
+                height={186}
+                width={186}
+                src='/images/about/shape-13.png'
+                alt='shape'
+              />
             </li>
           </ul>
         </div>

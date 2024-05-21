@@ -1,6 +1,6 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -41,18 +41,10 @@ const slider_data = [
 const HeroSlider = () => {
   return (
     <div className='hero-banner hero-style-3 bg-image'>
-      {/* <Swiper
-        navigation
-        pagination={{ type: 'fraction' }}
-        modules={[Navigation, Pagination]}
-        onSwiper={(swiper) => console.log(swiper)}
-        className='h-96 w-full rounded-lg'
-      > */}
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
         loop={true}
-        // lazy={true}
         pagination={false}
         grabCursor={true}
         draggable={true}
@@ -67,16 +59,14 @@ const HeroSlider = () => {
           nextEl: '.slide-next',
           prevEl: '.slide-prev',
         }}
-        // lazy={{
-        //   loadPrevNext: false,
-        //   loadPrevNextAmount: 1,
-        // }}
       >
         {slider_data.map((item) => {
           const { id, sm_text, src, subtitle, title } = item;
           return (
             <SwiperSlide key={id}>
-              <img
+              <Image
+                height={765}
+                width={1920}
                 data-transform-origin='center center'
                 src={src}
                 className='swiper-lazy'
@@ -140,28 +130,6 @@ const HeroSlider = () => {
           </div>
         </div>
       </Swiper>
-
-      {/* <ul className='shape-group'>
-        <li
-          className='shape-1 scene'
-          data-sal-delay='1000'
-          data-sal='fade'
-          data-sal-duration='1000'
-        >
-          <img src='/images/others/shape-10.png' alt='Shape' />
-        </li>
-        <li
-          className='shape-2 scene'
-          data-sal-delay='1000'
-          data-sal='fade'
-          data-sal-duration='1000'
-        >
-          <img src='/images/others/shape-11.png' alt='Shape' />
-        </li>
-        <li className='shape-3'>
-          <img src='/images/others/shape-25.png' alt='Shape' />
-        </li>
-      </ul> */}
     </div>
   );
 };

@@ -1,6 +1,12 @@
+import { Metadata } from 'next';
+
 import Wrapper from '@/components/layout/wrapper';
 import FacultyDetail from '@/components/member';
-import SEO from '@/components/seo';
+
+export const metadata: Metadata = {
+  title: 'Faculty Details Page',
+  description: 'Get to know our Board/Faculty Member.',
+};
 
 export default function FacultyMember({
   params,
@@ -10,7 +16,6 @@ export default function FacultyMember({
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='Faculty Member' />
         <FacultyDetail slug={params.slug} />
       </Wrapper>
     </>

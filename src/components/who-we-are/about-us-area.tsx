@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React from 'react';
 
 interface MissionItem {
@@ -96,7 +96,12 @@ const AboutUsArea = () => {
                     data-sal='slide-down'
                     data-sal-duration='1000'
                   >
-                    <img src='/images/about/about-13.webp' alt='About Images' />
+                    <Image
+                      height={320}
+                      width={255}
+                      src='/images/about/about-13.webp'
+                      alt='About Images'
+                    />
                   </div>
 
                   <div
@@ -105,7 +110,12 @@ const AboutUsArea = () => {
                     data-sal='slide-up'
                     data-sal-duration='1000'
                   >
-                    <img src='/images/about/about-15.webp' alt='About Images' />
+                    <Image
+                      height={180}
+                      width={255}
+                      src='/images/about/about-15.webp'
+                      alt='About Images'
+                    />
                   </div>
                 </div>
                 <div className='col-6 masonry-item'>
@@ -115,7 +125,12 @@ const AboutUsArea = () => {
                     data-sal='slide-down'
                     data-sal-duration='1000'
                   >
-                    <img src='/images/about/about-14.webp' alt='About Images' />
+                    <Image
+                      height={200}
+                      width={255}
+                      src='/images/about/about-14.webp'
+                      alt='About Images'
+                    />
                   </div>
                   <div
                     className='thumbnail thumbnail-3'
@@ -123,7 +138,12 @@ const AboutUsArea = () => {
                     data-sal='slide-up'
                     data-sal-duration='1000'
                   >
-                    <img src='/images/about/about-16.webp' alt='About Images' />
+                    <Image
+                      height={255}
+                      width={255}
+                      src='/images/about/about-16.webp'
+                      alt='About Images'
+                    />
                   </div>
                 </div>
               </div>
@@ -134,7 +154,12 @@ const AboutUsArea = () => {
                   data-sal='fade'
                   data-sal-duration='200'
                 >
-                  <img src='/images/about/shape-33.png' alt='Shape Images' />
+                  <Image
+                    height={193}
+                    width={210}
+                    src='/images/about/shape-33.png'
+                    alt='Shape Images'
+                  />
                 </li>
                 <li
                   className='shape-2 scene'
@@ -142,7 +167,12 @@ const AboutUsArea = () => {
                   data-sal='fade'
                   data-sal-duration='200'
                 >
-                  <img src='/images/about/shape-25.png' alt='Shape Images' />
+                  <Image
+                    height={186}
+                    width={186}
+                    src='/images/about/shape-25.png'
+                    alt='Shape Images'
+                  />
                 </li>
                 <li
                   className='shape-3 scene'
@@ -150,7 +180,12 @@ const AboutUsArea = () => {
                   data-sal='fade'
                   data-sal-duration='200'
                 >
-                  <img src='/images/about/shape-13.png' alt='Shape Images' />
+                  <Image
+                    height={186}
+                    width={186}
+                    src='/images/about/shape-13.png'
+                    alt='Shape Images'
+                  />
                 </li>
                 <li
                   className='shape-4 scene'

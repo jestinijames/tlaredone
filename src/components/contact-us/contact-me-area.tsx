@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React from 'react';
 
 import { SocialShare } from '@/components/social-share';
@@ -15,20 +15,37 @@ const ContactMeArea = () => {
               <div className='inner'>
                 <div className='thumbnail'>
                   <div className='thumb'>
-                    <img
+                    <Image
+                      height={390}
+                      width={390}
                       src='/images/others/contact-me.webp'
                       alt='Contact Me'
                     />
                   </div>
                   <ul className='shape-group'>
                     <li className='shape-1 scene'>
-                      <img src='/images/about/shape-13.png' alt='Shape' />
+                      <Image
+                        height={186}
+                        width={186}
+                        src='/images/about/shape-13.png'
+                        alt='Shape'
+                      />
                     </li>
                     <li className='shape-2 scene'>
-                      <img src='/images/counterup/shape-02.png' alt='Shape' />
+                      <Image
+                        height={175}
+                        width={159}
+                        src='/images/counterup/shape-02.png'
+                        alt='Shape'
+                      />
                     </li>
                     <li className='shape-3'>
-                      <img src='/images/about/shape-07.png' alt='Shape' />
+                      <Image
+                        height={191}
+                        width={123}
+                        src='/images/about/shape-07.png'
+                        alt='Shape'
+                      />
                     </li>
                   </ul>
                 </div>
@@ -38,12 +55,6 @@ const ContactMeArea = () => {
                     We will try to Answer all Your Questions
                   </h3>
                   <ul className='address-list'>
-                    {/* <li>
-                      <h5 className='title'>Address</h5>
-                      <p>
-                        Studio 76d, Riley Ford, North Michael chester, CF99 6QQ
-                      </p>
-                    </li> */}
                     <li>
                       <h5 className='title'>Email</h5>
                       <p>
@@ -52,12 +63,6 @@ const ContactMeArea = () => {
                         </a>
                       </p>
                     </li>
-                    {/* <li>
-                      <h5 className='title'>Phone</h5>
-                      <p>
-                        <a href='tel:+0914135548598'>(+091) 413 554 8598</a>
-                      </p>
-                    </li> */}
                   </ul>
                   <ul className='social-share'>
                     <li>

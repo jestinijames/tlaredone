@@ -15,6 +15,7 @@ const nextConfig = {
       'kwsowlmzxgsuylpwwqdl.supabase.co',
       'cloudflare-ipfs.com',
       'source.unsplash.com',
+      'i.ytimg.com',
     ],
   },
 

@@ -81,6 +81,10 @@ const CategoryArea = () => {
               data-sal-duration='800'
             >
               <div
+                style={{
+                  height: '50rem',
+                  maxHeight: '50rem',
+                }}
                 className={`categorie-grid categorie-style-1 ${category.color} edublink-svg-animate`}
               >
                 <div className='icon'>{category.icon}</div>

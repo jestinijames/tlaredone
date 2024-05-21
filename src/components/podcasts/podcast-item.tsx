@@ -1,5 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 import useModal from '@/hooks/use-modal';
@@ -55,7 +56,7 @@ const PodcastItem = ({ item }: any) => {
             }}
           >
             <span>
-              <img src={url} alt='Blog Images' />
+              <Image height={208} width={370} src={url} alt={title} />
             </span>
           </a>
           <div className='event-time'>
@@ -65,7 +66,13 @@ const PodcastItem = ({ item }: any) => {
             </span>
           </div>
         </div>
-        <div className='content'>
+        <div
+          style={{
+            height: '30rem',
+            maxHeight: '30rem',
+          }}
+          className='content'
+        >
           <div className='event-date'>
             <span className='day'>{title.substring(0, 3)}</span>
             {/* <span className='month'>{item.snippet.publishedAt?.split(' ')[0]}</span> */}
@@ -81,7 +88,8 @@ const PodcastItem = ({ item }: any) => {
           </li>
         </ul> */}
           <div className='read-more-btn'>
-            <a
+            <Link
+              href='#'
               onClick={(e) => {
                 e.stopPropagation();
                 e.preventDefault();
@@ -93,7 +101,7 @@ const PodcastItem = ({ item }: any) => {
             >
               Watch Now
               <i className='icon-4'></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

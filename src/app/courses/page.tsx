@@ -1,12 +1,17 @@
+import { Metadata } from 'next';
+
 import CoursesList from '@/components/courses';
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
+
+export const metadata: Metadata = {
+  title: 'Course Catalogue',
+  description: 'Take a look at our Course Catalogue.',
+};
 
 export default function Courses() {
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='Courses' />
         <CoursesList />
       </Wrapper>
     </>

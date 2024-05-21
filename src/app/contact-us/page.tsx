@@ -1,12 +1,17 @@
+import { Metadata } from 'next';
+
 import ContactUsSection from '@/components/contact-us';
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Find our contact details here.',
+};
 
 export default function ContactUs() {
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='Contact Us' />
         <ContactUsSection />
       </Wrapper>
     </>

@@ -1,6 +1,12 @@
+import { Metadata } from 'next';
+
 import ArticlesList from '@/components/articles-by-tag';
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
+
+export const metadata: Metadata = {
+  title: 'Articles',
+  description: 'Browse through our latest Articles.',
+};
 
 export default function ArticlesByTag({
   params,
@@ -10,7 +16,6 @@ export default function ArticlesByTag({
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='Article' />
         <ArticlesList slug={params.slug} />
       </Wrapper>
     </>

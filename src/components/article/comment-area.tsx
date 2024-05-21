@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React from 'react';
 
 const CommentArea = () => {
@@ -8,7 +9,12 @@ const CommentArea = () => {
       <div className='comment-list-wrapper'>
         <div className='comment'>
           <div className='thumbnail'>
-            <img src='/images/blog/comment-01.jpg' alt='Comment Images' />
+            <Image
+              height={80}
+              width={80}
+              src='/images/blog/comment-01.jpg'
+              alt='Comment Images'
+            />
           </div>
           <div className='comment-content'>
             <h5 className='title'>Haley Bennet</h5>
@@ -27,7 +33,12 @@ const CommentArea = () => {
 
         <div className='comment comment-reply'>
           <div className='thumbnail'>
-            <img src='/images/blog/comment-02.jpg' alt='Comment Images' />
+            <Image
+              height={80}
+              width={80}
+              src='/images/blog/comment-02.jpg'
+              alt='Comment Images'
+            />
           </div>
           <div className='comment-content'>
             <h5 className='title'>Simon Baker</h5>
@@ -46,7 +57,12 @@ const CommentArea = () => {
 
         <div className='comment'>
           <div className='thumbnail'>
-            <img src='/images/blog/comment-03.jpg' alt='Comment Images' />
+            <Image
+              height={80}
+              width={80}
+              src='/images/blog/comment-03.jpg'
+              alt='Comment Images'
+            />
           </div>
           <div className='comment-content'>
             <h6 className='title'>Richard Gere</h6>

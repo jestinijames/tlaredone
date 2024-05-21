@@ -1,12 +1,17 @@
+import { Metadata } from 'next';
+
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
 import WhatWeTeachSection from '@/components/what-we-teach';
+
+export const metadata: Metadata = {
+  title: 'What We Teach',
+  description: 'Get to know What We Teach.',
+};
 
 export default function WhatWeTeach() {
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='What We Teach' />
         <WhatWeTeachSection />
       </Wrapper>
     </>

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
+
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 import { home_page_courses } from '@/data/home_data';
@@ -77,7 +78,9 @@ const CoursesArea = () => {
       </div>
       <ul className='shape-group'>
         <li className='shape-5'>
-          <img
+          <Image
+            height={186}
+            width={186}
             className='rotateit'
             src='/images/about/shape-13.png'
             alt='Shape'

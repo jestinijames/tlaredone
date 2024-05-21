@@ -1,6 +1,12 @@
+import { Metadata } from 'next';
+
 import Wrapper from '@/components/layout/wrapper';
-import SEO from '@/components/seo';
 import UpdateArticleForm from '@/components/update-article';
+
+export const metadata: Metadata = {
+  title: 'Update Article',
+  description: 'Update your articles here.',
+};
 
 export default function CreateArticle({
   params,
@@ -10,7 +16,6 @@ export default function CreateArticle({
   return (
     <>
       <Wrapper>
-        <SEO pageTitle='Update Article' />
         <UpdateArticleForm slug={params.slug} />
       </Wrapper>
     </>

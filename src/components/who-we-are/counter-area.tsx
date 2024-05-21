@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image';
 import React from 'react';
 
 import Counter from '@/components/common/counter';
@@ -72,7 +72,12 @@ const CounterArea = () => {
             data-sal='fade'
             data-sal-duration='200'
           >
-            <img src='/images/others/shape-27.png' alt='Shape' />
+            <Image
+              height={140}
+              width={123}
+              src='/images/others/shape-27.png'
+              alt='Shape'
+            />
           </li>
         </ul>
       </div>
