@@ -30,7 +30,7 @@ const VideoArea = () => {
       <VideoModal
         isVideoOpen={isVideoOpen}
         setIsVideoOpen={setIsVideoOpen}
-        videoId='PICj5tr9hcc'
+        videoId='jreP885LxHw'
       />
       {/* video modal end */}
     </React.Fragment>
