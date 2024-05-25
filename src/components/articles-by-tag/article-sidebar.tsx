@@ -41,7 +41,7 @@ const ArticleSidebar = ({ tagId }: { tagId: string }) => {
                     return (
                       <Link
                         style={{
-                          background: '#1ab69d',
+                          background: '#f4a012',
                           color: '#fff',
                           cursor: 'default',
                         }}

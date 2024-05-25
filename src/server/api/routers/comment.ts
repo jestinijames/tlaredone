@@ -7,21 +7,25 @@ import {
 } from '@/server/api/trpc';
 
 export const commentRouter = createTRPCRouter({
-  createComment: protectedProcedure
+  createComment: publicProcedure
     .input(
       z.object({
         text: z.string().min(3),
         postId: z.string(),
+        name: z.string(),
+        email: z.string().email(),
       })
     )
     .mutation(async ({ input, ctx }) => {
-      const { session, db } = ctx;
-      const { user } = session;
+      const { db } = ctx;
 
       await db.comment.create({
         data: {
-          ...input,
-          userId: user.id,
+          text: input.text,
+          postId: input.postId,
+          name: input.name,
+          email: input.email,
+          isApproved: false, // default to false
         },
       });
     }),
@@ -35,17 +39,43 @@ export const commentRouter = createTRPCRouter({
       const comments = await db.comment.findMany({
         where: {
           postId,
-        },
-        include: {
-          user: {
-            select: {
-              name: true,
-              image: true,
-            },
-          },
+          isApproved: true, // only fetch approved comments
         },
       });
 
       return comments;
+    }),
+  approveComment: protectedProcedure
+    .input(
+      z.object({
+        commentId: z.string(),
+      })
+    )
+    .mutation(async ({ input, ctx }) => {
+      const { db } = ctx;
+
+      await db.comment.update({
+        where: {
+          id: input.commentId,
+        },
+        data: {
+          isApproved: true,
+        },
+      });
+    }),
+  deleteComment: protectedProcedure
+    .input(
+      z.object({
+        commentId: z.string(),
+      })
+    )
+    .mutation(async ({ input, ctx }) => {
+      const { db } = ctx;
+
+      await db.comment.delete({
+        where: {
+          id: input.commentId,
+        },
+      });
     }),
 });

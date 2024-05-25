@@ -9,7 +9,7 @@ const Result = () => {
     <p
       className='success-message'
       style={{
-        color: '#1ab69d',
+        color: '#f4a012',
         marginTop: '20px',
         marginBottom: '0',
         textAlign: 'center',

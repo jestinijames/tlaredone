@@ -28,6 +28,8 @@ export const env = createEnv({
     SUPABASE_SECRET_KEY: z.string(),
     UNSPLASH_API_ACCESS_KEY: z.string(),
     UNSPLASH_API_SECRET_KEY: z.string(),
+    // RECAPTCHA_SITE_KEY: z.string(),
+    // RECAPTCHA_SECRET_KEY: z.string(),
   },
 
   /**
@@ -54,6 +56,8 @@ export const env = createEnv({
     SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY,
     UNSPLASH_API_ACCESS_KEY: process.env.UNSPLASH_API_ACCESS_KEY,
     UNSPLASH_API_SECRET_KEY: process.env.UNSPLASH_API_SECRET_KEY,
+    // RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
+    // RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

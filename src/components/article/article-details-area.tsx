@@ -20,10 +20,13 @@ import {
 } from 'react-share';
 
 import ArticleSidebar from '@/components/article/article-sidebar';
+import CommentArea from '@/components/article/comment-area';
 
 import { api } from '@/trpc/react';
+
+import ArticleCommentForm from './article-comment-form';
 const ArticleDetailsArea = ({ slug }: { slug: string }) => {
-  const utils = api.useContext();
+  const utils = api.useUtils();
   const { data: sessionData } = useSession();
 
   const { data: blog, isSuccess } = api.post.getPost.useQuery(
@@ -226,12 +229,11 @@ const ArticleDetailsArea = ({ slug }: { slug: string }) => {
               </div>
             </div>
 
-            {/* DONT DELETE: DISABLING COMMENTS FOR NOW*/}
-            {/* <CommentArea />
+            {blog?.id && <CommentArea postId={blog?.id} />}
             <div className='comment-form-area'>
               <h3 className='heading-title'>Leave Your Comment Here</h3>
-              <ArticleCommentForm />
-            </div> */}
+              {blog?.id && <ArticleCommentForm postId={blog?.id} />}
+            </div>
           </div>
 
           <div className='col-lg-4'>
