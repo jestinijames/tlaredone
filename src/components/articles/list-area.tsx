@@ -4,12 +4,16 @@ import React from 'react';
 
 import ArticleItems from '@/components/articles/article-items';
 
-const ListArea = () => {
+interface ListAreaProps {
+  articles: any[]; // Replace 'any[]' with the appropriate type for articles
+}
+
+const ListArea: React.FC<ListAreaProps> = ({ articles }) => {
   return (
     <section className='section-gap-equal'>
       <div className='container'>
         <div className='row row--30'>
-          <ArticleItems />
+          <ArticleItems articles={articles} />
         </div>
       </div>
     </section>

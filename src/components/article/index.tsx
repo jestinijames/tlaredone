@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Breadcrumb from '@/components/breadcrumb';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
@@ -13,7 +11,18 @@ const parent_page = {
   url: '/articles',
 };
 
-const index = ({ slug }: { slug: string }) => {
+interface Article {
+  title: string;
+  content: string;
+  author?: string;
+  slug: string;
+  date: string;
+  description?: string;
+  featuredImage?: string;
+  tags?: string[];
+}
+
+const index = ({ article, slug }: { article: Article; slug: string }) => {
   return (
     <div className='sticky-header'>
       <div id='main-wrapper' className='main-wrapper'>
@@ -23,8 +32,14 @@ const index = ({ slug }: { slug: string }) => {
           current_page={deslugify(slug)}
           parent_page={parent_page}
         />
-        <ArticleDetailsArea slug={slug} />
-
+        <ArticleDetailsArea
+          article={{
+            ...article,
+            description: article.description || '',
+            author: article.author || 'Unknown',
+            tags: article.tags || [], // Provide default empty array
+          }}
+        />
         <Footer dark_bg={true} />
       </div>
     </div>

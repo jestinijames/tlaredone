@@ -5,13 +5,17 @@ import Breadcrumb from '@/components/breadcrumb';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 
-const index = () => {
+interface ArticlesProps {
+  articles: any[]; // Replace 'any[]' with the appropriate type for articles
+}
+
+const index = ({ articles }: ArticlesProps) => {
   return (
     <div className='sticky-header'>
       <div id='main-wrapper' className='main-wrapper'>
         <Header />
         <Breadcrumb title='Articles Home' current_page='Articles' />
-        <ListArea />
+        <ListArea articles={articles} />
 
         <Footer dark_bg={true} />
       </div>

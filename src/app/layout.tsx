@@ -10,7 +10,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 import { siteConfig } from '@/constant/config';
 import AuthProvider from '@/providers/AuthProvider';
-import { TRPCReactProvider } from '@/trpc/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -44,29 +43,27 @@ export default function RootLayout({
     <html>
       <body>
         <ReduxProvider>
-          <TRPCReactProvider>
-            <AuthProvider>
-              <ThemeProvider defaultTheme='light'>
-                <NextTopLoader
-                  color='#5c5ca4'
-                  initialPosition={0.08}
-                  crawlSpeed={200}
-                  height={3}
-                  crawl={true}
-                  showSpinner={true}
-                  easing='ease'
-                  speed={200}
-                  shadow='0 0 10px #5c5ca4,0 0 5px #5c5ca4'
-                  template='<div class="bar" role="bar"><div class="peg"></div></div> 
+          <AuthProvider>
+            <ThemeProvider defaultTheme='light'>
+              <NextTopLoader
+                color='#5c5ca4'
+                initialPosition={0.08}
+                crawlSpeed={200}
+                height={3}
+                crawl={true}
+                showSpinner={true}
+                easing='ease'
+                speed={200}
+                shadow='0 0 10px #5c5ca4,0 0 5px #5c5ca4'
+                template='<div class="bar" role="bar"><div class="peg"></div></div> 
   <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
-                  zIndex={1600}
-                  showAtBottom={false}
-                />
-                {children}
-                <Theme />
-              </ThemeProvider>
-            </AuthProvider>
-          </TRPCReactProvider>
+                zIndex={1600}
+                showAtBottom={false}
+              />
+              {children}
+              <Theme />
+            </ThemeProvider>
+          </AuthProvider>
         </ReduxProvider>
       </body>
     </html>

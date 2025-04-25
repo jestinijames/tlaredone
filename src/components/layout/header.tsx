@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
@@ -72,36 +72,6 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
 
                 <div className='header-top-right'>
                   <ul className='header-info'>
-                    {status === 'unauthenticated' && (
-                      <li>
-                        <Link
-                          onClick={(e: any) => {
-                            e.preventDefault();
-                            signIn('google');
-                          }}
-                          href='#'
-                        >
-                          Login
-                        </Link>
-                      </li>
-                    )}
-                    {status === 'authenticated' && (
-                      <>
-                        <li>
-                          <Link
-                            onClick={async (e) => {
-                              e.preventDefault();
-                              await signOut({ redirect: false });
-                              router.push('/');
-                            }}
-                            href='#'
-                          >
-                            Logout
-                          </Link>
-                        </li>
-                        <li>Welcome {data.user?.name}</li>
-                      </>
-                    )}
                     <li className='header-btn'>
                       <Link
                         href='/contact-us'

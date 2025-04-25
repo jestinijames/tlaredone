@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import React from 'react';
 interface OffCanvasPopupProps {
   isOpen: boolean;
@@ -76,36 +76,7 @@ const OffCanvas = ({ isOpen, setIsOpen }: OffCanvasPopupProps) => {
               <li>
                 <Link href='/podcasts'>Podcasts</Link>
               </li>
-              <li>
-                <Link
-                  href='#'
-                  onClick={(e: any) => {
-                    e.preventDefault();
-                    signIn('google');
-                  }}
-                >
-                  Login
-                </Link>
-              </li>
-              {status === 'authenticated' && (
-                <>
-                  <li>
-                    <Link href='/create-article'>Create Article</Link>
-                  </li>
-                  <li>
-                    <Link
-                      onClick={async (e) => {
-                        e.preventDefault();
-                        await signOut({ redirect: false });
-                        router.push('/');
-                      }}
-                      href='#'
-                    >
-                      Logout
-                    </Link>
-                  </li>
-                </>
-              )}
+
               <li>
                 <Link
                   className='edu-btn btn-secondary'
