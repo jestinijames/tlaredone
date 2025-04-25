@@ -2,13 +2,9 @@
 import Link from 'next/link';
 import React from 'react';
 
-import LatestArticles from '@/components/common/latest-articles';
-
 const ArticleSidebar = () => {
   return (
     <div className='edu-blog-sidebar'>
-      <LatestArticles />
-
       <div className='edu-blog-widget widget-action'>
         <div className='inner'>
           <h4 className='title'>
