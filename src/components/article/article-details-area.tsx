@@ -9,8 +9,6 @@ import ShareButtons from '@/components/article/share-buttons';
 import { Article } from '@/components/articles/article-items';
 
 const ArticleDetailsArea = ({ article }: { article: Article }) => {
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-
   return (
     <div className='blog-details-area section-gap-equal'>
       <div className='container'>

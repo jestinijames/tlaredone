@@ -1,6 +1,6 @@
 ---
 title: 'YHWH and Chandrayaan'
-description: 'Exploring the compatibility of scientific achievement and Christian faith through India's Chandrayaan-3 lunar mission, examining how modern space exploration can coexist with biblical belief in God as Creator and Sustainer of the universe.'
+description: 'Exploring the compatibility of scientific achievement and Christian faith through India`s Chandrayaan-3 lunar mission, examining how modern space exploration can coexist with biblical belief in God as Creator and Sustainer of the universe.'
 author: 'Revanth T'
 date: '2023-08-30'
 tags:

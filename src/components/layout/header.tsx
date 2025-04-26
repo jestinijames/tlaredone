@@ -2,8 +2,6 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
@@ -26,10 +24,6 @@ const Header = ({ style_3, no_topBar = false }: HeaderProps) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
-
-  const { data, status } = useSession();
-
-  const router = useRouter();
 
   // Ensuring that the component is only rendered on the client-side
   const [isClient, setIsClient] = useState(false);

@@ -1,6 +1,6 @@
 ---
 title: 'How can you be saved?'
-description: 'An explanation of the Christian gospel message focusing on Jesus' death as a ransom for sin, the nature of human sinfulness, and the necessity of repentance and faith for salvation.'
+description: 'An explanation of the Christian gospel message focusing on Jesus` death as a ransom for sin, the nature of human sinfulness, and the necessity of repentance and faith for salvation.'
 author: 'Revanth T'
 date: '2018-05-15'
 tags:

@@ -1,6 +1,6 @@
 ---
-title: 'Unwavering Devotion: Women at Jesus' Cross and Tomb'
-description: 'An exploration of the faithful women who remained at Jesus' crucifixion and tomb while the male disciples fled, examining the devotion of Mary of Nazareth, Salome, and Mary Magdalene and the spiritual lessons their stories teach us.'
+title: 'Unwavering Devotion: Women at Jesus` Cross and Tomb'
+description: 'An exploration of the faithful women who remained at Jesus` crucifixion and tomb while the male disciples fled, examining the devotion of Mary of Nazareth, Salome, and Mary Magdalene and the spiritual lessons their stories teach us.'
 author: 'Revanth T'
 date: '2020-04-10'
 tags:

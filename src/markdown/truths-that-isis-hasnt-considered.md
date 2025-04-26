@@ -1,5 +1,5 @@
 ---
-title: 'Truths that ISIS hasn't considered!'
+title: 'Truths that ISIS hasn`t considered!'
 description: 'An examination of four spiritual truths that ISIS has overlooked in their persecution of Christians in Iraq, offering biblical perspective on martyrdom, the indestructibility of the church, divine justice, and the possibility of redemption.'
 author: 'Revanth T'
 date: '2015-08-10'

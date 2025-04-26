@@ -1,6 +1,6 @@
 ---
 title: 'Changing times, unchanging hope'
-description: 'A Christian perspective on India's 2019 general election results, offering biblical guidance for believers concerned about political changes and encouraging faith in God's sovereignty amidst uncertain political landscapes.'
+description: 'A Christian perspective on India`s 2019 general election results, offering biblical guidance for believers concerned about political changes and encouraging faith in God`s sovereignty amidst uncertain political landscapes.'
 author: 'Revanth T'
 date: '2019-05-23'
 tags:

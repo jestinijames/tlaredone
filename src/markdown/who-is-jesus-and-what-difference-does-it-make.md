@@ -1,6 +1,6 @@
 ---
 title: 'Who is Jesus and what difference does it make?'
-description: 'An exploration of Jesus Christ's identity through examining his claims and actions in the Gospels, analyzing his divine authority and the historical evidence for his self-understanding as God in human form.'
+description: 'An exploration of Jesus Christ`s identity through examining his claims and actions in the Gospels, analyzing his divine authority and the historical evidence for his self-understanding as God in human form.'
 author: 'Revanth T'
 date: '2020-02-15'
 tags:

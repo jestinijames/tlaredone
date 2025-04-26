@@ -1,6 +1,6 @@
 ---
 title: 'Return of the Prodigal Son'
-description: 'An examination of the Parable of the Prodigal Son in Luke 15, exploring how it reveals God's character through His willingness to forgive, restore, and celebrate repentant sinners, while challenging us to extend the same grace to others.'
+description: 'An examination of the Parable of the Prodigal Son in Luke 15, exploring how it reveals God`s character through His willingness to forgive, restore, and celebrate repentant sinners, while challenging us to extend the same grace to others.'
 author: 'Revanth T'
 date: '2020-03-15'
 tags:

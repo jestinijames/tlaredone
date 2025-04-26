@@ -1,5 +1,5 @@
 ---
-title: 'Why Didn't God Abolish Slavery?'
+title: 'Why Didn`t God Abolish Slavery?'
 description: 'A thorough examination of why the Bible regulates rather than abolishes slavery, addressing progressive revelation, historical context, and how New Testament principles eventually led to the moral rejection of slavery.'
 author: 'Revanth T'
 date: '2019-08-15'

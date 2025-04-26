@@ -1,6 +1,6 @@
 ---
 title: 'Slavery in the Old Testament'
-description: 'An examination of how to understand slavery in the Old Testament, addressing the historical context of ancient Near Eastern slavery practices, the biblical text's humanitarian regulations, and how to reconcile these passages with God's character revealed throughout Scripture.'
+description: 'An examination of how to understand slavery in the Old Testament, addressing the historical context of ancient Near Eastern slavery practices, the biblical text`s humanitarian regulations, and how to reconcile these passages with God`s character revealed throughout Scripture.'
 author: 'Revanth T'
 date: '2019-07-15'
 tags:

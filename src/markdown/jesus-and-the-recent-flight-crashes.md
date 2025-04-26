@@ -1,6 +1,6 @@
 ---
 title: 'Jesus and the Recent Plane Crashes'
-description: 'An examination of how we should understand tragedies like the Lion Air and Ethiopian Airlines crashes from a biblical perspective, based on Jesus' teaching about suffering and God's judgment.'
+description: 'An examination of how we should understand tragedies like the Lion Air and Ethiopian Airlines crashes from a biblical perspective, based on Jesus` teaching about suffering and God`s judgment.'
 author: 'Revanth T'
 date: '2019-03-20'
 tags:
