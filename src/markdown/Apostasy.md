@@ -10,7 +10,7 @@ tags:
   - false teachers
   - Joshua Harris
   - Marty Sampson
-featuredImage: '/assets/images/blog/blog-16_2.jpg'
+featuredImage: '/images/blog/apostasy.png'
 ---
 
 **Question:**  

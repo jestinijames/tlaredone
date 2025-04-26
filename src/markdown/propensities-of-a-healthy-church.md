@@ -11,7 +11,7 @@ tags:
   - biblical model
   - church growth
   - eldership
-featuredImage: '/assets/images/blog/blog-33_2.jpg'
+featuredImage: '/images/blog/church.png'
 ---
 
 The annual report of a small evangelical denomination quotes the prophet Isaiah: "Behold, I am doing a new thing" (Isaiah 43:19, ESV). This detailed report describes how the Lord has been working through the churches associated with the denomination and calls for crafting a vision for the future. Many of their goals of recent years have been realized; some have been put on the back burner; others rephrased for new challenges in the future.

@@ -8,7 +8,7 @@ tags:
   - suffering
   - repentance
   - judgment
-featuredImage: '/assets/images/blog/blog-18_2.jpg'
+featuredImage: '/images/blog/plane.png'
 ---
 
 **Question:**  

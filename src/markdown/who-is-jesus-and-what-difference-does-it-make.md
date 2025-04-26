@@ -13,7 +13,7 @@ tags:
   - Passover
   - New Testament
   - identity
-featuredImage: '/assets/images/blog/blog-31_2.jpg'
+featuredImage: '/images/blog/disciples.png'
 ---
 
 Who is Jesus? This was a recurrent question in the context in which he lived and ministered in the first century AD. After more than twenty centuries, it still remains the most debated question. That's hardly astonishing because "the character of Jesus," wrote W. E. H. Lecky, "has not only been the highest pattern of virtue, but the strongest incentive to its practice, and has exerted so deep an influence, that it may be truly said that the simple record of three years of active life has done more to regenerate and to soften mankind than all the disquisitions of philosophers and all the exhortations of moralists." Lecky was a nineteenth century historian, a non-Christian, whose historical enquiry impelled him to acknowledge that Jesus is not only a historical figure but also our eternal contemporary – someone who continues to have a far-reaching influence on the world.

@@ -11,7 +11,7 @@ tags:
   - progressive revelation
   - historical context
   - theology
-featuredImage: '/assets/images/blog/blog-24_2.jpg'
+featuredImage: '/images/blog/slavery.png'
 ---
 
 **Question:**  

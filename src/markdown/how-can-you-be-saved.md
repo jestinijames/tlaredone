@@ -11,7 +11,7 @@ tags:
   - Jesus Christ
   - ransom
   - eternal life
-featuredImage: '/assets/images/blog/blog-22_2.jpg'
+featuredImage: '/images/blog/salvation.png'
 ---
 
 ## The Gospel according to Jesus

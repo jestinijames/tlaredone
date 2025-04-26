@@ -12,7 +12,7 @@ tags:
   - election
   - theology
   - penal substitution
-featuredImage: '/assets/images/blog/blog-28_2.jpg'
+featuredImage: '/images/blog/bridge.png'
 ---
 
 **Question:**  

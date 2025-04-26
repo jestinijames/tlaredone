@@ -12,7 +12,7 @@ tags:
   - reconciliation
   - Jesus
   - New Testament
-featuredImage: '/assets/images/blog/blog-32_2.jpg'
+featuredImage: '/images/blog/prodigal.png'
 ---
 
 **Abstract:** The parable puts on display the beauty of God's character. God's forgiveness is always available. Our need is to turn to God and take what he offers in His grace. Also, we need to accept those who seek forgiveness, for there is joy in heaven over those who repent.

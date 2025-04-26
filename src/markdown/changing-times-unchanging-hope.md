@@ -12,7 +12,7 @@ tags:
   - elections
   - Christianity
   - sovereignty of God
-featuredImage: '/assets/images/blog/blog-29_2.jpg'
+featuredImage: '/images/blog/changing.png'
 ---
 
 What happened on Wednesday, 23 May 2019, will leave an indelible mark in the history of India. It's the colossal victory of a major right-wing political party in the general elections. Frankly, this could cause worry in our hearts for most, if not all of us. The reasons could be varied – starting from a possible increase of persecution of the church in India to the dissolution of constitutional values on which our nation was founded. As political doyens on various news channels discussed about what the future may hold for our nation, the picture they painted was very grim. But, it's amidst voices like these that we need to have a perspective; a perspective that is cogent and unashamedly Biblical. This will help us navigate through with fortitude and hope, should the grim times predicted by the pundits, dawn upon us. Here are a few truths to remember on a day like this.

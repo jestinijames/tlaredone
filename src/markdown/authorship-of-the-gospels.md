@@ -12,7 +12,7 @@ tags:
   - Luke
   - John
   - biblical evidence
-featuredImage: '/assets/images/blog/blog-23_2.jpg'
+featuredImage: '/images/blog/authorship.png'
 ---
 
 **Question:**  

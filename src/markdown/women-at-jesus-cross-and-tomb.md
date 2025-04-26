@@ -13,7 +13,7 @@ tags:
   - Mary Magdalene
   - Salome
   - gospel narratives
-featuredImage: '/assets/images/blog/blog-25_2.jpg'
+featuredImage: '/images/blog/women.png'
 ---
 
 Jesus explained to his disciples, on more than one occasion, that he would be rejected, killed and would rise again after three days. The disciples did not fully understand it as they had no concept of a suffering and dying Messiah. Not surprisingly, when Jesus was arrested, "all the disciples left him and fled" (Matthew 26:56). While the male disciples deserted Jesus at his death, several women followers and supporters from Galilee followed him to the cross. Matthew and Mark highlight Mary Magdalene and a certain Mary the mother of James and Joseph/Joses, who might also be the mother of Jesus (cf. Mark 6:3). Matthew further gives prominence to the mother of Zebedee's sons (cf. Matthew 20:20), while Mark makes a mention of Salome. Although these women followers too did not understand the full import of Jesus' teaching about his death and resurrection, they still continued to follow him. They are featured in the narratives as the primary witnesses to Jesus' crucifixion, burial and empty tomb, and those commissioned to report the news of the resurrection to the other disciples.

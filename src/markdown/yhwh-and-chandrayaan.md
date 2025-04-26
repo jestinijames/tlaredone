@@ -1,5 +1,5 @@
 ---
-title: 'YHWH and Chandrayaan'
+title: 'YHWH and Chandrayaan 3'
 description: 'Exploring the compatibility of scientific achievement and Christian faith through India`s Chandrayaan-3 lunar mission, examining how modern space exploration can coexist with biblical belief in God as Creator and Sustainer of the universe.'
 author: 'Revanth T'
 date: '2023-08-30'
@@ -12,7 +12,7 @@ tags:
   - providence
   - ISRO
   - Christianity
-featuredImage: '/assets/images/blog/blog-26_2.jpg'
+featuredImage: '/images/blog/sattelite.png'
 ---
 
 On August 23, 2023, India made history when Chandrayaan-3 successfully landed on the moon's south pole. This remarkable achievement has placed India in an elite group of nations with lunar landing capabilities, alongside the United States, China, and the former Soviet Union. The precision with which the Indian Space Research Organisation (ISRO) executed this mission has garnered global admiration.

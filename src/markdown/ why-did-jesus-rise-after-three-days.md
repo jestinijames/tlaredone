@@ -14,7 +14,7 @@ tags:
   - Matthew 12
   - Ephesians 4
   - 1 Peter 3
-featuredImage: '/assets/images/blog/blog-17_2.jpg'
+featuredImage: '/images/blog/resurrection.png'
 ---
 
 **Question:**  

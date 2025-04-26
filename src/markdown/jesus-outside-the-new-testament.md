@@ -11,7 +11,7 @@ tags:
   - Josephus
   - Roman historians
   - historical Jesus
-featuredImage: '/assets/images/blog/blog-19_2.jpg'
+featuredImage: '/images/blog/roman.png'
 ---
 
 Without a doubt, Jesus of Nazareth is the most influential figure in history. A person of such enormous significance will naturally be a subject of our curiosity and fascination. This interest has resulted in a long, rigorous search into the ancient sources that speak about him. The New Testament has usually been the primary source, and often the only source for studying about Jesus' life, teaching and ministry. However, in most scholarship of the last hundred years, it hasn't enjoyed that privileged position. New Testament scholars and other historians of ancient times have been keen in looking into extracanonical sources to understand Jesus and have often placed a higher value on them than on the canonical sources.

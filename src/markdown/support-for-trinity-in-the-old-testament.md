@@ -11,7 +11,7 @@ tags:
   - angel of the Lord
   - Holy Spirit
   - biblical doctrine
-featuredImage: '/assets/images/blog/blog-20_2.jpg'
+featuredImage: '/images/blog/trinity.png'
 ---
 
 **Question:**  

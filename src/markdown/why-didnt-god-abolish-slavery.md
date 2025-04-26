@@ -12,7 +12,7 @@ tags:
   - historical context
   - New Testament
   - Philemon
-featuredImage: '/assets/images/blog/blog-27_2.jpg'
+featuredImage: '/images/blog/abolish.png'
 ---
 
 **Question:**  

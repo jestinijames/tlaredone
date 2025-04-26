@@ -12,7 +12,7 @@ tags:
   - eternal life
   - suffering
   - New Testament
-featuredImage: '/assets/images/blog/blog-30_2.jpg'
+featuredImage: '/images/blog/covid.png'
 ---
 
 Corona virus has had a horrendous impact on human life than any natural disaster – say an earthquake – could have. Earthquakes are spine-chilling and perilous, because they rock what we thought was durable and secure. Corona virus has shaken our beliefs, and many of us are grappling to adapt to this unforeseen reality. Things we took for granted – lunch with friends after church, kids going to school every morning, the Indian Premier League season – have been cancelled or rescheduled. And, now, we're doing things we could never have envisaged – standing a few feet away from friends, cleaning the packaging on the groceries we buy, getting "together" on zoom for Sunday worship, and many more. Profits of numerous businesses have plummeted, education is fully online, several friends have been hospitalized, and some have died. Corona virus has caught us off guard and has thrown some of us off balance.

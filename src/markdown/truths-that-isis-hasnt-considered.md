@@ -11,7 +11,7 @@ tags:
   - church
   - Christianity
   - justice
-featuredImage: '/assets/images/blog/blog-21_2.jpg'
+featuredImage: '/images/blog/isis.png'
 ---
 
 Everyone in the world is now turning their attention to the northern plains of Iraq, to a city where Jonah first delivered the Lord's message thousands of years ago. Today the story of Nineveh (now called Mosul) isn't about a messenger of the Lord going into the city, but about thousands of Christ's followers being forced out of the city. If you've been following the news about ISIS, which now calls itself the Islamic State, you might even think you've mistakenly clicked on a historical story about barbarians from millennia ago. The group has seized territories in both Iraq and Syria and declared an Islamic caliphate, celebrating its own shocking slaughter of Christians along the way. The Caliph Al-Baghdadi and his jihadists have shocked the world with their atrocities in Iraq, and their brutal endeavor to obliterate the Christian communities from the region.
