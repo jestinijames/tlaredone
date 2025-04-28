@@ -4,7 +4,7 @@ const blog_data = [
     img: '/images/blog/blog-04.jpg',
     category: 'ARTICLE',
     title: 'Why didn`t God abolish slavery?',
-    link: `/articles/article/Why-didn't-God-abolish-slavery`,
+    link: `/articles/why-didnt-god-abolish-slavery`,
     date: 'JAN 10 2021',
     comment: 18,
     sm_desc:
@@ -18,7 +18,7 @@ const blog_data = [
     img: '/images/blog/blog-05.jpg',
     category: 'ARTICLE',
     title: 'Why did Jesus rise after Three days?',
-    link: `/articles/article/Why-did-Jesus-rise-after-Three-days`,
+    link: `/articles/resurrection-on-the-third-day`,
     date: 'SEP 10 2021',
     comment: 14,
     sm_desc:
@@ -30,12 +30,12 @@ const blog_data = [
     id: 6,
     img: '/images/blog/blog-06.jpg',
     category: 'ARTICLE',
-    title: 'Why are unbelievers often better than Christians?',
-    link: `/articles/article/Why-are-unbelievers-often-better-than-Christians`,
+    title: 'Changing Times Unchanging Hope',
+    link: `/articles/changing-times-unchanging-hope`,
     date: 'SEP 18 2021',
     comment: 9,
     sm_desc:
-      'This is often one of the most painful questions to answer, as implicit in the question is the allegation that some Christians are not living up to their calling',
+      'The world is changing at a rapid pace. The changes are so rapid that it is difficult to keep up with them.',
     author: 'Revanth T',
     home_4: true,
   },
@@ -44,7 +44,7 @@ const blog_data = [
     img: '/images/blog/blog-10.jpg',
     category: 'ARTICLE',
     title: 'Who is Jesus and what difference does it make?',
-    link: `/articles/article/Who-is-Jesus-and-what-difference-does-it-make`,
+    link: `/articles/who-is-jesus-and-what-difference-does-it-make`,
     date: 'SEP 25 2021',
     comment: 16,
     sm_desc:

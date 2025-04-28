@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
 import * as React from 'react';
 
-import '../styles/scss/index.scss';
+// import '../styles/scss/index.scss';
+import './globals.scss';
 
 import Theme from '@/components/common/theme';
 import { ReduxProvider } from '@/components/redux-provider';

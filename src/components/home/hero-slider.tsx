@@ -1,13 +1,9 @@
 'use client';
-
 import Image from 'next/image';
-import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
+import { useState } from 'react';
+import { Swiper as SwiperClass } from 'swiper';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
 const slider_data = [
   {
     id: 1,
@@ -39,88 +35,130 @@ const slider_data = [
 ];
 
 const HeroSlider = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   return (
-    <div className='hero-banner hero-style-3 bg-image'>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={0}
-        loop={true}
-        pagination={false}
-        grabCursor={true}
-        draggable={true}
-        modules={[Autoplay, EffectFade, Navigation]}
-        effect='fade'
-        className='swiper university-activator'
-        speed={1000}
-        autoplay={{
-          delay: 5500,
-        }}
-        navigation={{
-          nextEl: '.slide-next',
-          prevEl: '.slide-prev',
-        }}
-      >
-        {slider_data.map((item) => {
-          const { id, sm_text, src, subtitle, title } = item;
-          return (
-            <SwiperSlide key={id}>
-              <Image
-                height={765}
-                width={1920}
-                data-transform-origin='center center'
-                src={src}
-                className='swiper-lazy'
-                alt='image'
-              />
-              <div className='thumbnail-bg-content'>
-                <div className='container edublink-animated-shape'>
-                  <div className='row'>
-                    <div className='col-7'>
-                      <div className='banner-content'>
-                        <span
-                          className='subtitle'
-                          data-sal='slide-up'
-                          data-sal-duration='1000'
-                        >
-                          {subtitle}
-                        </span>
-                        <h1
-                          className='title'
-                          data-sal-delay='100'
-                          data-sal='slide-up'
-                          data-sal-duration='1000'
-                        >
-                          {title}
-                        </h1>
-                        <p
-                          data-sal-delay='200'
-                          data-sal='slide-up'
-                          data-sal-duration='1000'
-                        >
-                          {sm_text}
-                        </p>
-                        <div
-                          className='banner-btn'
-                          data-sal-delay='400'
-                          data-sal='slide-up'
-                          data-sal-duration='1000'
-                        >
-                          {/* <Link
-                            className='edu-btn btn-secondary'
-                            href='/course-style-1'
-                          >
-                            {btn_text} <i className='icon-4'></i>
-                          </Link> */}
-                        </div>
-                      </div>
+    <>
+      <div className='hero-banner hero-style-9'>
+        <div className='slider'>
+          <div className='container'>
+            <Swiper
+              spaceBetween={0}
+              speed={1000}
+              autoplay={{
+                delay: 5000,
+              }}
+              thumbs={{ swiper: thumbsSwiper }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              navigation={{
+                nextEl: '.slide-next',
+                prevEl: '.slide-prev',
+              }}
+              className='swiper health-slider-content'
+            >
+              {slider_data.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <div className='inner'>
+                    <span className='pre-title color-primary'>
+                      {item.title}
+                    </span>
+                    <h1 className='title'>{item.title}</h1>
+                    <p>{item.sm_text} </p>
+                    <div className='banner-btn'>
+                      <a href='/courses' className='edu-btn'>
+                        Find courses <i className='icon-4'></i>
+                      </a>
                     </div>
                   </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            {/* <!-- end slider-content --> */}
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              slidesPerView={1}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className='swiper health-slider-main'
+            >
+              {slider_data.map((item, i) => (
+                <SwiperSlide key={i}>
+                  <div
+                    className='slide-image'
+                    style={{ backgroundImage: `url(${item.src})` }}
+                  ></div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            {/* <!-- end slider-main --> */}
+            <ul className='shape-group'>
+              <li className='shape-1'>
+                <span></span>
+              </li>
+              <li className='shape-2'>
+                <Image
+                  className='rotateit'
+                  src='/assets/images/about/shape-25.png'
+                  alt='Shape'
+                  width={180} // Adjust width as needed
+                  height={180} // Adjust height as needed
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul className='shape-group'>
+          <li
+            className='shape-3 scene'
+            data-sal-delay='1000'
+            data-sal='fade'
+            data-sal-duration='1000'
+          >
+            <Image
+              data-depth='2'
+              src='/assets/images/others/health-shape-33.png'
+              alt='Shape'
+              width={180} // Adjust width as needed
+              height={180} // Adjust height as needed
+            />
+          </li>
+          <li
+            className='shape-4 scene'
+            data-sal-delay='1000'
+            data-sal='fade'
+            data-sal-duration='1000'
+          >
+            <Image
+              data-depth='2'
+              src='/assets/images/others/health-shape-34.png'
+              alt='Shape'
+              width={180} // Adjust width as needed
+              height={180} // Adjust height as needed
+            />
+          </li>
+          <li className='shape-5'>
+            <Image
+              src='/assets/images/counterup/shape-02.png'
+              alt='image'
+              width={180} // Adjust width as needed
+              height={180} // Adjust height as needed
+            />
+          </li>
+          <li
+            className='shape-6 scene'
+            data-sal-delay='1000'
+            data-sal='fade'
+            data-sal-duration='1000'
+          >
+            <Image
+              data-depth='-2'
+              src='/assets/images/about/shape-13.png'
+              alt='Shape'
+              width={180} // Adjust width as needed
+              height={180} // Adjust height as needed
+            />
+          </li>
+        </ul>
         <div className='hero-slider-bg-controls'>
           <div className='swiper-slide-controls slide-prev'>
             <i className='icon-west'></i>
@@ -129,8 +167,8 @@ const HeroSlider = () => {
             <i className='icon-east'></i>
           </div>
         </div>
-      </Swiper>
-    </div>
+      </div>
+    </>
   );
 };
 
